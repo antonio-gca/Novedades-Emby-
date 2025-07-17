@@ -18,12 +18,14 @@
         .badge-dv { background:#43a047; color:#fff; border-radius:4px; padding:2px 7px; font-size:12px; font-weight:bold;}
         .badge-hdr10 { background:#1565c0; color:#fff; border-radius:4px; padding:2px 7px; font-size:12px; font-weight:bold;}
         .badge-1080p { background:#757575; color:#fff; border-radius:4px; padding:2px 7px; font-size:12px; font-weight:bold;}
-        .categoria-badge { background:#e91e63; color:#fff; border-radius:4px; padding:2px 7px; font-size:12px; margin-left:6px; font-weight:bold;}
-        .emby-btn { display:inline-block; margin-top:8px; margin-right:8px; padding:7px 18px; background:#009688; color:#fff; border-radius:5px; text-decoration:none; font-weight:bold; transition:background .2s; position:relative;}
-        .emby-beta { background:#ffb300; color:#222; border-radius:4px; font-size:11px; padding:2px 6px; margin-left:8px;vertical-align:middle;}
-        .emby-btn:hover { background:#00796b;}
+        .categoria-badge { background:#e91e63; color:#fff; border-radius:4px; padding:2px 7px; font-size:12px; margin-left:6px; font-weight:bold; display:inline-flex; align-items:center;}
+        .emby-btn { display:inline-block; margin-top:8px; margin-right:8px; padding:7px 18px; background:#62BE7C; color:#fff; border-radius:5px; text-decoration:none; font-weight:bold; transition:background .2s; position:relative; border: none;}
+        .emby-btn:hover { background:#37AD5E;}
+        .emby-beta { background:#222; color:#62BE7C; border-radius:4px; font-size:11px; padding:2px 6px; margin-left:8px; vertical-align:middle; font-weight:bold; letter-spacing:.5px;}
+        .trailer-btn { background: #FF3333; color: #fff; border-radius:4px; margin-top:8px; margin-bottom:10px; padding:5px 14px; text-decoration:none; font-size:13px; font-weight: bold; display: inline-block;}
+        .trailer-btn:hover { background: #C62828; }
         #darkmode-toggle { position:fixed;top:14px;right:16px;z-index:100;background:#eee;color:#222;border:none;padding:7px 16px;border-radius:8px;cursor:pointer;font-weight:bold;}
-        .nota-app { margin-top: 10px; color:#555; font-size: 0.96em; max-width:420px;}
+        .nota-app { margin-top:10px; font-size:12px; color:#b4b4b4;}
         @media (prefers-color-scheme: dark) {
             body { background:#181c23; color:#e2e2e2;}
             .novedad { background:#252a33; border-color:#39404a;}
@@ -46,7 +48,7 @@
         }
     }
     window.onload = function() {
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem('darkMode') === '1') {
+        if (localStorage.getItem('darkMode') === '1') {
             document.body.classList.add('dark-mode');
         }
     }
@@ -55,11 +57,11 @@
 </head><body>
 <button id='darkmode-toggle' onclick='toggleDarkMode()'>🌘 Alternar modo</button>
     <h1>Historial de Novedades</h1>
-    <div class='fecha'>Última actualización: 17/07/2025 23:02</div>
+    <div class='fecha'>Última actualización: 17/07/2025 23:29</div>
 <h2>Películas nuevas</h2>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/AqLFZK2nykm6oURXFRHjOaAssqn.jpg' alt='Fanart'>
-  <h3>Dovbush <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Dovbush <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -74,11 +76,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/815029' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=815029'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Dovbush+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/cU9HXBinAA0Q67pWlsj0kpKfsG3.jpg' alt='Fanart'>
-  <h3>Code Geass: Lelouch of the Rebellion I — Initiation <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Code Geass: Lelouch of the Rebellion I — Initiation <span class='badge'>Película</span>
 <span class='categoria-badge'>Anime</span>
 </h3>
   <ul>
@@ -90,11 +93,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/477776' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=477776'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Code+Geass:+Lelouch+of+the+Rebellion+I+—+Initiation+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/dQeXRjxH7Onfy8n0WCPD7bKHIo8.jpg' alt='Fanart'>
-  <h3>Las locas peripecias de un Sr. mamá <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Las locas peripecias de un Sr. mamá <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -109,11 +113,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/13105' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=13105'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Las+locas+peripecias+de+un+Sr.+mamá+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/zI9KXvQEkku5cmcwKnubOY5JfhJ.jpg' alt='Fanart'>
-  <h3>Camino De Oregón <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Camino De Oregón <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -128,10 +133,11 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/42703' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=42703'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Camino+De+Oregón+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-  <h3>Nuestro Universo Infinito <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Nuestro Universo Infinito <span class='badge'>Película</span>
 <span class='categoria-badge'>Documental</span>
 </h3>
   <div class='badges-calidad'>
@@ -146,11 +152,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/1341735' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=1341735'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Nuestro+Universo+Infinito+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/p6sqf1ujNfaQepZgVC7j3E0dU0B.jpg' alt='Fanart'>
-  <h3>Ella es el partido <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Ella es el partido <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -165,11 +172,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/4942' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=4942'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Ella+es+el+partido+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/giHTf3nGlCU7gd6vFAlTxBfQtvr.jpg' alt='Fanart'>
-  <h3>Desafío total <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Desafío total <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -180,16 +188,17 @@
     <li><b>Año:</b> 2012</li>
     <li><b>Sinopsis:</b> Rekall es una empresa que puede convertir los sueños en recuerdos reales, haciendo que la frontera entre realidad y memoria se difumine. Para Douglas Quaid la idea de hacer un viaje mental que le proporcione recuerdos de una vida como superespía puede ser la solución perfecta para contrarrestar su frustrante vida. Lo malo es que el proceso sale mal, y Quaid se convierte en un hombre perseguido por los agentes de un estado totalitario. En su huida, se asocia con una combatiente rebelde con el fin de encontrar al cabecilla de la resistencia clandestina. Mientras el destino del mundo pende de un hilo, Quaid descubre su verdadera identidad y su verdadero destino. Se inspira en el cuento "Podemos recordar por usted al por mayor" de Philip K. Dick.</li>
     <li><b>Género:</b> Acción, Ciencia ficción, Suspense</li>
-    <li><b>Rating TMDB:</b> 6.024</li>
+    <li><b>Rating TMDB:</b> 6.025</li>
     <li><b>Duración:</b> 121 minutos</li>
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/64635' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=64635'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Desafío+total+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/wV1rqqJxzjPtTPrdByeBHmT44Wn.jpg' alt='Fanart'>
-  <h3>Réplicas <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Réplicas <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -205,11 +214,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/300681' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=300681'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Réplicas+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/tyfO9jHgkhypUFizRVYD0bytPjP.jpg' alt='Fanart'>
-  <h3>Blancanieves <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Blancanieves <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -227,11 +237,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/447273' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=447273'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Blancanieves+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/d7JUXVvjvVCXWs1mlpyO5ESdWdT.jpg' alt='Fanart'>
-  <h3>Palm Springs <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Palm Springs <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -246,11 +257,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/587792' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=587792'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Palm+Springs+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/iKqItVltY6r0eJeIRdIZV8IrBpz.jpg' alt='Fanart'>
-  <h3>Misión hostil <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Misión hostil <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -268,11 +280,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/969492' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=969492'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Misión+hostil+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/xScjwsqx8vXzBaKiioVIB5MkDmQ.jpg' alt='Fanart'>
-  <h3>Zombies 4: Un verano entre vampiros <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Zombies 4: Un verano entre vampiros <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -289,11 +302,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/1243341' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=1243341'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Zombies+4:+Un+verano+entre+vampiros+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/tdMbbFhqyEqOK1QzNTvJjHWKbZX.jpg' alt='Fanart'>
-  <h3>Ziam <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Ziam <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -310,11 +324,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/1429744' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=1429744'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Ziam+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/oaocZ3WPKZ7hTgExWH0MGUoTNb5.jpg' alt='Fanart'>
-  <h3>Sumario 3/94 <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Sumario 3/94 <span class='badge'>Película</span>
 <span class='categoria-badge'>Documental</span>
 </h3>
   <div class='badges-calidad'>
@@ -329,11 +344,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/1397278' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=1397278'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Sumario+3/94+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/qGqD5YhRGeQzYkD9exKGhSX04KK.jpg' alt='Fanart'>
-  <h3>¡Arde Hollywood! <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>¡Arde Hollywood! <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -348,11 +364,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/78149' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=78149'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=¡Arde+Hollywood!+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/31Qf9qIuyIwCY3YP7EJjRsx3KQr.jpg' alt='Fanart'>
-  <h3>Z-O-M-B-I-E-S <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Z-O-M-B-I-E-S <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -367,11 +384,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/483980' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=483980'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Z-O-M-B-I-E-S+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/n3ScTmzK466ZbUi8n5OgDRhTMxQ.jpg' alt='Fanart'>
-  <h3>Z-O-M-B-I-E-S 2 <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Z-O-M-B-I-E-S 2 <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -386,11 +404,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/599521' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=599521'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Z-O-M-B-I-E-S+2+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/nEuYv9Tihw8pZrZufyhzNE2jRB.jpg' alt='Fanart'>
-  <h3>Los aitas <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Los aitas <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -405,11 +424,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/1187315' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=1187315'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Los+aitas+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/e4AyTx37zz9MhJEXKHTDlfseMzT.jpg' alt='Fanart'>
-  <h3>Tiburón: la historia definitiva <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Tiburón: la historia definitiva <span class='badge'>Película</span>
 <span class='categoria-badge'>Documental</span>
 </h3>
   <div class='badges-calidad'>
@@ -424,11 +444,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/1308619' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=1308619'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Tiburón:+la+historia+definitiva+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/kfzZ7oaZrM6O6gc6NVY33Gm4NFW.jpg' alt='Fanart'>
-  <h3>Apocalipsis en los trópicos <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Apocalipsis en los trópicos <span class='badge'>Película</span>
 <span class='categoria-badge'>Documental</span>
 </h3>
   <div class='badges-calidad'>
@@ -443,11 +464,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/1320400' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=1320400'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Apocalipsis+en+los+trópicos+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/CQtlo69Ts7oeeyEtSqZZNKQtNE.jpg' alt='Fanart'>
-  <h3>Fiasco total: El niño del globo <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Fiasco total: El niño del globo <span class='badge'>Película</span>
 <span class='categoria-badge'>Documental</span>
 </h3>
   <div class='badges-calidad'>
@@ -462,11 +484,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/1477566' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=1477566'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Fiasco+total:+El+niño+del+globo+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/aO2D1QDJD7te3mVVLTtW25GqUy6.jpg' alt='Fanart'>
-  <h3>Vale la pena, de Dani Rovira <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Vale la pena, de Dani Rovira <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -481,11 +504,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/1506130' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=1506130'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Vale+la+pena,+de+Dani+Rovira+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/8ASGDbVRdK0UX71fV7oknkquS7k.jpg' alt='Fanart'>
-  <h3>2046 <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>2046 <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -502,11 +526,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/844' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=844'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=2046+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/sIKiJUAPNnoOwuYMhJFy9QWJe6.jpg' alt='Fanart'>
-  <h3>Raíces profundas <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Raíces profundas <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -523,11 +548,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/3110' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=3110'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Raíces+profundas+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/d4p6VPoN70CnTV74jbW5ltlDgsh.jpg' alt='Fanart'>
-  <h3>Sirenas <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Sirenas <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -542,11 +568,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/4587' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=4587'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Sirenas+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/ctzKCslTsMRsOJNvAm1Mw8ytiHY.jpg' alt='Fanart'>
-  <h3>Maverick <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Maverick <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -561,11 +588,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/9359' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=9359'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Maverick+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/aufp3uY7zZZnozU3D4bdK6K0BX1.jpg' alt='Fanart'>
-  <h3>Al límite del riesgo <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Al límite del riesgo <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -580,11 +608,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/10861' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=10861'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Al+límite+del+riesgo+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/uxWx25FBOvT4OS4HmFnMSJYbaj0.jpg' alt='Fanart'>
-  <h3>Escalofrío <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Escalofrío <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -601,11 +630,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/12149' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=12149'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Escalofrío+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/cGayGCWiMR2upCKADxLmKLBiNUd.jpg' alt='Fanart'>
-  <h3>Las vampiras <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Las vampiras <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -620,11 +650,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/17343' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=17343'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Las+vampiras+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/a9F2cldYpiwyOvR528D66wZ4git.jpg' alt='Fanart'>
-  <h3>Las colinas tienen ojos 2 <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Las colinas tienen ojos 2 <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -639,11 +670,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/18477' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=18477'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Las+colinas+tienen+ojos+2+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/u8AWqW7ierKmRNR9YGLoLTa9prW.jpg' alt='Fanart'>
-  <h3>Gritos en la noche <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Gritos en la noche <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -658,11 +690,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/27699' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=27699'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Gritos+en+la+noche+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/h6hvy15g67TlFr3fJh3QWtT6vr3.jpg' alt='Fanart'>
-  <h3>Inconscientes <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Inconscientes <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -677,11 +710,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/43271' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=43271'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Inconscientes+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/tZ5Oc4GLvoarxTApN3aLrhHYVnh.jpg' alt='Fanart'>
-  <h3>Bésame monstruo <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Bésame monstruo <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -696,11 +730,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/125176' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=125176'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Bésame+monstruo+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/nQD1HCBXXn3DKOUtY8saV5FQkdb.jpg' alt='Fanart'>
-  <h3>Cara a la muerte <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Cara a la muerte <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -715,11 +750,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/136226' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=136226'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Cara+a+la+muerte+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/l33oR0mnvf20avWyIMxW02EtQxn.jpg' alt='Fanart'>
-  <h3>Interstellar <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Interstellar <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -737,11 +773,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/157336' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=157336'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Interstellar+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/sTBSeRz3UKFdumztzDtKi4hmxMJ.jpg' alt='Fanart'>
-  <h3>Esquilache <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Esquilache <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -756,11 +793,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/160492' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=160492'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Esquilache+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/bXKsNZJqmPIWMUw2lxzeKDEUMSk.jpg' alt='Fanart'>
-  <h3>El baile del pato <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>El baile del pato <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -775,11 +813,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/189326' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=189326'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=El+baile+del+pato+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/uyffwuL3W4e6qms5nzoDXQ9aPEg.jpg' alt='Fanart'>
-  <h3>Sediento de justicia <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Sediento de justicia <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -794,11 +833,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/208162' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=208162'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Sediento+de+justicia+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/2C3CdVzINUm5Cm1lrbT2uiRstwX.jpg' alt='Fanart'>
-  <h3>La creación de los dioses: El reino de las tormentas <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>La creación de los dioses: El reino de las tormentas <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -815,11 +855,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/856289' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=856289'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=La+creación+de+los+dioses:+El+reino+de+las+tormentas+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/v5h8xiCJ1cI7nhGZmt1jZwHQCii.jpg' alt='Fanart'>
-  <h3>Mira para otro lado <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Mira para otro lado <span class='badge'>Película</span>
 <span class='categoria-badge'>Documental</span>
 </h3>
   <div class='badges-calidad'>
@@ -834,10 +875,11 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/878961' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=878961'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Mira+para+otro+lado+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-  <h3>Gora Automatikoa <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Gora Automatikoa <span class='badge'>Película</span>
 <span class='categoria-badge'>Dibujo</span>
 </h3>
   <div class='badges-calidad'>
@@ -852,11 +894,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/897183' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=897183'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Gora+Automatikoa+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/mgR2z7LUTW3MbtPSHDy4OFUkvIV.jpg' alt='Fanart'>
-  <h3>Influencer <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Influencer <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -871,11 +914,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/1120937' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=1120937'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Influencer+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/6Q5k3wKLCHWc4sdjfpfGH50EUcd.jpg' alt='Fanart'>
-  <h3>La cita <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>La cita <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -893,11 +937,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/1249213' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=1249213'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=La+cita+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/2NVCb78rRVcXbjSvezfixi3KPkk.jpg' alt='Fanart'>
-  <h3>Memorias de un hombre invisible <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Memorias de un hombre invisible <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -912,11 +957,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/2687' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=2687'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Memorias+de+un+hombre+invisible+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/nHeAA8XdS3zfoo1DS54EeXznUZA.jpg' alt='Fanart'>
-  <h3>Un año y un día <span class='badge'>Película</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="1" y="3" width="12" height="8" rx="2" fill="#336699"/><circle cx="3" cy="7" r="1" fill="#fff"/><circle cx="7" cy="7" r="1" fill="#fff"/><circle cx="11" cy="7" r="1" fill="#fff"/></svg>Un año y un día <span class='badge'>Película</span>
 <span class='categoria-badge'>Película</span>
 </h3>
   <div class='badges-calidad'>
@@ -931,12 +977,13 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/movie/1410221' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=1410221'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Un+año+y+un+día+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <h2>Series nuevas</h2>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/oz5zbMBKCUsb7hsbjdxvK8yagPD.jpg' alt='Fanart'>
-  <h3>Dragon Ball Z Kai <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>Dragon Ball Z Kai <span class='badge'>Serie</span>
 <span class='categoria-badge'>Anime</span>
 </h3>
   <div class='badges-calidad'>
@@ -950,11 +997,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/61709' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=61709'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Dragon+Ball+Z+Kai+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/4pxGvtwxDlATy9nvJMvYL8u25LZ.jpg' alt='Fanart'>
-  <h3>La cuenta atrás <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>La cuenta atrás <span class='badge'>Serie</span>
 <span class='categoria-badge'>General</span>
 </h3>
   <div class='badges-calidad'>
@@ -968,11 +1016,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/256317' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=256317'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=La+cuenta+atrás+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/bx26v6trU13B2VfzSMfpMJe7OGb.jpg' alt='Fanart'>
-  <h3>La desaparición de Amy Bradley <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>La desaparición de Amy Bradley <span class='badge'>Serie</span>
 <span class='categoria-badge'>Documental</span>
 </h3>
   <div class='badges-calidad'>
@@ -986,11 +1035,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/294726' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=294726'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=La+desaparición+de+Amy+Bradley+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/3IxznCOIYjajctSJ6BtlkDfJ22Y.jpg' alt='Fanart'>
-  <h3>Toradora! <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>Toradora! <span class='badge'>Serie</span>
 <span class='categoria-badge'>Anime</span>
 </h3>
   <div class='badges-calidad'>
@@ -1004,11 +1054,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/42916' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=42916'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Toradora!+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/iAnNhCoBKUXWoTxgmGYrv2Qc8Dm.jpg' alt='Fanart'>
-  <h3>The Buccaneers: Aristócratas por amor <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>The Buccaneers: Aristócratas por amor <span class='badge'>Serie</span>
 <span class='categoria-badge'>General</span>
 </h3>
   <div class='badges-calidad'>
@@ -1024,11 +1075,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/213338' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=213338'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=The+Buccaneers:+Aristócratas+por+amor+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/eXxgT33OitzfmYol1kbTy7TKNOR.jpg' alt='Fanart'>
-  <h3>New PANTY & STOCKING with GARTERBELT <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>New PANTY & STOCKING with GARTERBELT <span class='badge'>Serie</span>
 <span class='categoria-badge'>Anime</span>
 </h3>
   <div class='badges-calidad'>
@@ -1042,11 +1094,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/246862' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=246862'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=New+PANTY+&+STOCKING+with+GARTERBELT+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/lqaT9mIxcVJs9QSUf0hdy0zW68C.jpg' alt='Fanart'>
-  <h3>Sticks: Cracks del golf <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>Sticks: Cracks del golf <span class='badge'>Serie</span>
 <span class='categoria-badge'>General</span>
 </h3>
   <div class='badges-calidad'>
@@ -1060,11 +1113,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/248830' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=248830'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Sticks:+Cracks+del+golf+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/kVZcEY6PCeweU4GFWBOnlKAM28L.jpg' alt='Fanart'>
-  <h3>The Shiunji Family Children <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>The Shiunji Family Children <span class='badge'>Serie</span>
 <span class='categoria-badge'>Anime</span>
 </h3>
   <ul>
@@ -1075,11 +1129,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/261091' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=261091'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=The+Shiunji+Family+Children+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/7EDiFma8CrnbT9F05xNd50CZZrr.jpg' alt='Fanart'>
-  <h3>GUILTY GEAR STRIVE: DUAL RULERS <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>GUILTY GEAR STRIVE: DUAL RULERS <span class='badge'>Serie</span>
 <span class='categoria-badge'>Anime</span>
 </h3>
   <div class='badges-calidad'>
@@ -1093,11 +1148,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/282666' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=282666'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=GUILTY+GEAR+STRIVE:+DUAL+RULERS+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/lL0rMeVqiOyVwmft6oPKQKbDYr6.jpg' alt='Fanart'>
-  <h3>Another <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>Another <span class='badge'>Serie</span>
 <span class='categoria-badge'>Anime</span>
 </h3>
   <div class='badges-calidad'>
@@ -1111,11 +1167,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/42589' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=42589'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Another+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/pJqAgDico7ZTMAfAXyzldYqj5ME.jpg' alt='Fanart'>
-  <h3>Grand Blue <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>Grand Blue <span class='badge'>Serie</span>
 <span class='categoria-badge'>Anime</span>
 </h3>
   <ul>
@@ -1126,11 +1183,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/79166' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=79166'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Grand+Blue+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/de6iC707SwuMsE3y2fo5OHCOsvj.jpg' alt='Fanart'>
-  <h3>The Rising of the Shield Hero <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>The Rising of the Shield Hero <span class='badge'>Serie</span>
 <span class='categoria-badge'>Anime</span>
 </h3>
   <div class='badges-calidad'>
@@ -1144,11 +1202,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/83095' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=83095'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=The+Rising+of+the+Shield+Hero+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/zDXuwmqkTi2lGM4AyloAAX4v51P.jpg' alt='Fanart'>
-  <h3>Fire Force <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>Fire Force <span class='badge'>Serie</span>
 <span class='categoria-badge'>Anime</span>
 </h3>
   <div class='badges-calidad'>
@@ -1162,11 +1221,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/88046' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=88046'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Fire+Force+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/yxCKl8PUUDmy0CTbWqBxfhHYRG6.jpg' alt='Fanart'>
-  <h3>Dealing with Mikadono Sisters Is a Breeze <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>Dealing with Mikadono Sisters Is a Breeze <span class='badge'>Serie</span>
 <span class='categoria-badge'>Anime</span>
 </h3>
   <ul>
@@ -1177,11 +1237,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/272556' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=272556'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Dealing+with+Mikadono+Sisters+Is+a+Breeze+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/lPpKeKWD0dfHB8ZakfEavurVZ1T.jpg' alt='Fanart'>
-  <h3>Solo Camping for Two <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>Solo Camping for Two <span class='badge'>Serie</span>
 <span class='categoria-badge'>Anime</span>
 </h3>
   <ul>
@@ -1192,11 +1253,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/281044' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=281044'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Solo+Camping+for+Two+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/mbQi8FC2Gk762plIcZfYCE2Kcmj.jpg' alt='Fanart'>
-  <h3>Los Borgia <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>Los Borgia <span class='badge'>Serie</span>
 <span class='categoria-badge'>General</span>
 </h3>
   <div class='badges-calidad'>
@@ -1210,11 +1272,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/33025' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=33025'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Los+Borgia+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/hFFAYkK8XkvIlQss9GYxo8TOhFi.jpg' alt='Fanart'>
-  <h3>Yellowstone <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>Yellowstone <span class='badge'>Serie</span>
 <span class='categoria-badge'>General</span>
 </h3>
   <div class='badges-calidad'>
@@ -1229,11 +1292,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/73586' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=73586'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Yellowstone+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/z8CzVVAGHRRmgJQ6ZRjr8OuCmlj.jpg' alt='Fanart'>
-  <h3>The Equalizer <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>The Equalizer <span class='badge'>Serie</span>
 <span class='categoria-badge'>General</span>
 </h3>
   <div class='badges-calidad'>
@@ -1247,11 +1311,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/95205' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=95205'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=The+Equalizer+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/c17wJXhZqMD2sGLJE5kTTD6XTj3.jpg' alt='Fanart'>
-  <h3>El Lute: La Serie <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>El Lute: La Serie <span class='badge'>Serie</span>
 <span class='categoria-badge'>General</span>
 </h3>
   <div class='badges-calidad'>
@@ -1265,11 +1330,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/217617' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=217617'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=El+Lute:+La+Serie+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/8NX2kBLHS6vSrl8Lg3Y2JAqzmy9.jpg' alt='Fanart'>
-  <h3>Vicios ocultos <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>Vicios ocultos <span class='badge'>Serie</span>
 <span class='categoria-badge'>General</span>
 </h3>
   <div class='badges-calidad'>
@@ -1285,11 +1351,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/241609' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=241609'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Vicios+ocultos+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/uVnGusAwehV4WdxgKwFg0UJql1R.jpg' alt='Fanart'>
-  <h3>Tracker <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>Tracker <span class='badge'>Serie</span>
 <span class='categoria-badge'>General</span>
 </h3>
   <div class='badges-calidad'>
@@ -1303,11 +1370,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/211288' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=211288'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Tracker+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/svdtJsa1ZhZ31zcc5XGEMbbI52j.jpg' alt='Fanart'>
-  <h3>Matabot <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>Matabot <span class='badge'>Serie</span>
 <span class='categoria-badge'>General</span>
 </h3>
   <div class='badges-calidad'>
@@ -1323,11 +1391,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/241554' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=241554'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Matabot+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/tQqbbxBAdW2ql8vbOqMOJbtSQ7O.jpg' alt='Fanart'>
-  <h3>Tierra de mafiosos <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>Tierra de mafiosos <span class='badge'>Serie</span>
 <span class='categoria-badge'>General</span>
 </h3>
   <div class='badges-calidad'>
@@ -1342,11 +1411,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/247718' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=247718'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Tierra+de+mafiosos+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/mbSSCIbNpeyNJqKAKkWgdvYsQ8F.jpg' alt='Fanart'>
-  <h3>La promesa <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>La promesa <span class='badge'>Serie</span>
 <span class='categoria-badge'>Novela</span>
 </h3>
   <div class='badges-calidad'>
@@ -1360,11 +1430,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/212907' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=212907'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=La+promesa+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/m3TefIJ6pe8QNH2s4tHAtJjd1IN.jpg' alt='Fanart'>
-  <h3>Delta <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>Delta <span class='badge'>Serie</span>
 <span class='categoria-badge'>General</span>
 </h3>
   <div class='badges-calidad'>
@@ -1378,11 +1449,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/270854' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=270854'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Delta+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/o0NsbcIvsllg6CJX0FBFY8wWbsn.jpg' alt='Fanart'>
-  <h3>Bleach <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>Bleach <span class='badge'>Serie</span>
 <span class='categoria-badge'>Anime</span>
 </h3>
   <div class='badges-calidad'>
@@ -1396,11 +1468,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/30984' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=30984'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Bleach+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/jPcQlhoJ3LrOfKwCvGD58P8rC5b.jpg' alt='Fanart'>
-  <h3>La edad dorada <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>La edad dorada <span class='badge'>Serie</span>
 <span class='categoria-badge'>General</span>
 </h3>
   <div class='badges-calidad'>
@@ -1414,11 +1487,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/81723' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=81723'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=La+edad+dorada+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/3siv3RaQrdr2tQiv9jHq71sLlzo.jpg' alt='Fanart'>
-  <h3>The Chosen (Los elegidos) <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>The Chosen (Los elegidos) <span class='badge'>Serie</span>
 <span class='categoria-badge'>General</span>
 </h3>
   <div class='badges-calidad'>
@@ -1432,11 +1506,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/85077' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=85077'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=The+Chosen+(Los+elegidos)+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/hYwZR2P8MNJZz2Dnj68M8bUOfLt.jpg' alt='Fanart'>
-  <h3>Un chico ejemplar <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>Un chico ejemplar <span class='badge'>Serie</span>
 <span class='categoria-badge'>General</span>
 </h3>
   <div class='badges-calidad'>
@@ -1450,11 +1525,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/231280' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=231280'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Un+chico+ejemplar+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/mcU5nwUqPJB6GeElDhKA68LKhqD.jpg' alt='Fanart'>
-  <h3>El Instituto <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>El Instituto <span class='badge'>Serie</span>
 <span class='categoria-badge'>General</span>
 </h3>
   <div class='badges-calidad'>
@@ -1468,11 +1544,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/253372' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=253372'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=El+Instituto+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/4uWvmON2pqDJtpPAsHMggdDFFrn.jpg' alt='Fanart'>
-  <h3>Ley y orden <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>Ley y orden <span class='badge'>Serie</span>
 <span class='categoria-badge'>Retro</span>
 </h3>
   <div class='badges-calidad'>
@@ -1486,11 +1563,12 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/549' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=549'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Ley+y+orden+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
   <img class='fanart' src='https://image.tmdb.org/t/p/w780/iVmLMqK6zx2BHvJbGrWRbj7R4Ao.jpg' alt='Fanart'>
-  <h3>Grand Prix <span class='badge'>Serie</span>
+  <h3><svg width="14" height="14" style="vertical-align:middle;margin-right:3px;" viewBox="0 0 14 14"><rect x="2" y="4" width="10" height="6" rx="2" fill="#757575"/><rect x="5" y="10" width="4" height="2" rx="1" fill="#757575"/></svg>Grand Prix <span class='badge'>Serie</span>
 <span class='categoria-badge'>Reality</span>
 </h3>
   <div class='badges-calidad'>
@@ -1504,6 +1582,7 @@
     <li><b>Más información:</b> <a href='https://www.themoviedb.org/tv/37673' target='_blank'>Ver en TMDB</a></li>
   </ul>
 <a class='emby-btn' href='emby://detail?itemId=37673'><span>Ver en App Emby</span><span class='emby-beta'>BETA</span></a>
-<div class='nota-app' style='margin-top:4px;font-size:12px;color:#888;'>*Este botón abre la app Emby, pero deberás buscar manualmente la película o serie.<br>Esta función es experimental y depende de futuras mejoras en Emby App.*</div>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Grand+Prix+trailer' target='_blank'>Ver tráiler</a>
+<div class='nota-app'><i>Abre la app Emby (BETA). Busca el título manualmente.</i></div>
 </div>
 </body></html>
