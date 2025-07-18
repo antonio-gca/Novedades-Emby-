@@ -67,17 +67,17 @@
     }
     .clearlogo {
         position: absolute;
-        left: 8px;
-        bottom: 6px;
-        width: 85%;
-        min-width: 240px;
-        max-width: 600px;
+        left: 24px;
+        bottom: 24px;
+        width: 54%;
+        min-width: 120px;
+        max-width: 310px;
         height: auto;
         opacity: 1;
         z-index: 11;
         pointer-events: none;
         background: transparent;
-        filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 4px #fff);
+        filter: drop-shadow(0 0 0.7px #fff) drop-shadow(0 0 2px #fff);
     }
     .titulo-pelicula {
         font-size: 2.05em;
@@ -141,7 +141,7 @@
     }
     .badge-calidad {
         padding: 3px 13px;
-        border: 1.5px solid #fff;
+        border: 2px solid #fff;
         background: transparent !important;
         color: #ededed;
         font-size: 13px;
@@ -177,31 +177,33 @@
         max-width: 97%;
         word-break: break-word;
     }
+    /* SOLO ESTE BLOQUE MODIFICADO PARA BOTONES UNO ENCIMA DE OTRO */
     .botones-fila {
         display: flex;
+        flex-direction: column;
+        gap: 12px;
         width: 100%;
-        gap: 16px;
+        align-items: center;
         margin-top: 18px;
         justify-content: center;
     }
     .emby-btn, .trailer-btn {
-        flex: 1 1 0;
+        width: 100%;
         background: #262c38;
         color: #fff;
         border-radius: 7px;
         border: none;
-        font-weight: 800;
+        font-weight: 700;
         font-size: 15px;
-        padding: 8px 0;
+        padding: 9px 0;
         display: flex;
         align-items: center;
         justify-content: center;
         text-decoration: none !important;
-        box-shadow: 0 2px 10px #0008;
+        box-shadow: none;
         text-transform: none;
         letter-spacing: 0.03em;
         transition: background .19s;
-        min-width: 0;
         user-select: none;
         outline: none;
         cursor: pointer;
@@ -228,20 +230,11 @@
         padding-left: 4px;
     }
     @media (max-width: 700px) {
-        .clearlogo {
-            min-width: 96px;
-            max-width: 95vw;
-            left: 3vw;
-            bottom: 10px;
-            width: 70vw;
-        }
-        .botones-fila {
-            flex-direction: column;
-            gap: 12px;
-        }
-        .emby-btn, .trailer-btn {
-            border-radius: 7px;
-        }
+        .clearlogo { min-width: 65px; max-width: 120px; left: 6px; bottom: 12px; width: 34%; filter:none; }
+        .titulo-pelicula { font-size: 1.12em; }
+        .badge-row, .botones-fila { flex-wrap: wrap; }
+        .actores-disco { gap: 4px; }
+        .emby-btn, .trailer-btn { font-size: 1em; padding: 8px 0; }
     }
     </style>
 </head>
@@ -250,7 +243,7 @@
         <img class="emby-logo-header" src="https://i.ibb.co/LDFLnszC/Embylogo.png" alt="Emby Logo" />
     </div>
     <h1>Historial de Actualizaciones</h1>
-    <div class='fecha'>Última actualización: 18/07/2025 22:09</div>
+    <div class='fecha'>Última actualización: 18/07/2025 22:22</div>
 
 <h2>Últimas actualizaciones | Películas</h2>
 <div class='novedad'>
@@ -5383,57 +5376,6 @@ El disputado voto del señor Cayo
 </div>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
-<div class='novedad'>
-<div class="fanart-box">
-<img class='fanart' src='https://image.tmdb.org/t/p/w780/apNfldKI3RiaukNwJzr8EjRG7Wc.jpg' alt='Fanart'>
-</div>
-<div class="titulo-pelicula">
-<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg' alt='Netflix' title='Netflix'/>
-El muro negro
-</div>
-<div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>5.75</span> TMDB</span></div>
-<div class='badges-calidad'>
-<span class='badge-calidad'>1080p</span>
-<span class='badge-calidad'>4K</span>
-<span class='badge-calidad'>DV</span>
-<span class='badge-calidad'>HDR10+</span>
-</div>
-<div class='actores-disco'><img src='https://image.tmdb.org/t/p/w185/i4c5JjvC5EpecZbp4J96mFmtm0Z.jpg' class='actor-disco' alt='Matthias Schweighöfer' title='Matthias Schweighöfer'/><img src='https://image.tmdb.org/t/p/w185/IXnwGeXbjgKhw3W2mGrK8HBSjC.jpg' class='actor-disco' alt='Ruby O. Fee' title='Ruby O. Fee'/><img src='https://image.tmdb.org/t/p/w185/4ukrX8OPPsD06YMFoTL00uZrwa4.jpg' class='actor-disco' alt='Frederick Lau' title='Frederick Lau'/><img src='https://image.tmdb.org/t/p/w185/cbAqpoWwC9qzCbOidm6Ym2sSgWk.jpg' class='actor-disco' alt='Salber Lee Williams' title='Salber Lee Williams'/><img src='https://image.tmdb.org/t/p/w185/k0oHhVt3scoV7lRycxsS8YCnu8M.jpg' class='actor-disco' alt='Murathan Muslu' title='Murathan Muslu'/><img src='https://image.tmdb.org/t/p/w185/yV9k1pt5XfpkgU8BqfMwCWHm5Dt.jpg' class='actor-disco' alt='Sira-Anna Faal' title='Sira-Anna Faal'/></div>
-<ul>
-<li><b>Año:</b> 2025</li>
-<li><b>Sinopsis:</b> Cuando un misterioso muro de ladrillo aparece inesperadamente en torno a su edificio, Tim y Olivia deberán colaborar con sus vecinos para encontrar una salida.</li>
-<li><b>Género:</b> Suspense, Ciencia ficción</li>
-<li><b>Duración:</b> 99 minutos</li>
-<li><b>Info:</b> <a href='https://www.themoviedb.org/movie/1425045' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
-</ul>
-<div class='botones-fila'>
-<a class='emby-btn' href='emby://detail?itemId=1425045' target='_blank'>
-                    <svg class='emby-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
-                        <g id="Layer_3">
-                        <linearGradient id="SVGID_1_" x1="13.96" x2="35.54" y1="12.88" y2="34.46" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#21ad64"/>
-                            <stop offset="1" stop-color="#088242"/>
-                        </linearGradient>
-                        <polygon fill="url(#SVGID_1_)" points="36.6,31.4 37.6,32.4 26.5,43.5 17.5,34.5 15.5,36.5 4.4,25.4 13.9,15.9 12.4,14.4 23.5,3.3 33,12.8 34.5,11.3 45.6,22.4"/>
-                        <linearGradient id="SVGID_00000132792886771557010450000012628389501577398928_" x1="26.817" x2="26.817" y1="16.069" y2="31.845" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#fcfcfc"/>
-                            <stop offset="1" stop-color="#c3c9cd"/>
-                        </linearGradient>
-                        <polygon fill="url(#SVGID_00000132792886771557010450000012628389501577398928_)" points="20.2,16.2 33.4,23.7 20.2,31.4"/>
-                        </g>
-                    </svg>
-                    ver en emby
-                </a>
-<a class='trailer-btn' href='https://www.youtube.com/results?search_query=El+muro+negro+trailer+español' target='_blank'>
-                    <svg class='yt-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
-                        <path fill="#FF3D00" d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"/>
-                        <path fill="#FFF" d="M20 31L20 17 32 24z"/>
-                    </svg>
-                    tráiler
-                </a>
-</div>
-<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
-</div>
 <h2>Últimas actualizaciones | Series</h2>
 <div class='novedad'>
 <div class="fanart-box">
@@ -7978,424 +7920,6 @@ The Tiny Chef Show
                     ver en emby
                 </a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=The+Tiny+Chef+Show+trailer+español' target='_blank'>
-                    <svg class='yt-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
-                        <path fill="#FF3D00" d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"/>
-                        <path fill="#FFF" d="M20 31L20 17 32 24z"/>
-                    </svg>
-                    tráiler
-                </a>
-</div>
-<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
-</div>
-<div class='novedad'>
-<div class="fanart-box">
-<img class='fanart' src='https://image.tmdb.org/t/p/w780/xV0Xro8G20SgxYfGrXun26k7eVp.jpg' alt='Fanart'>
-</div>
-<div class="titulo-pelicula">
-<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg' alt='Crunchyroll' title='Crunchyroll'/>
-Rurouni Kenshin
-</div>
-<div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>ANIME</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.4</span> TMDB</span></div>
-<div class='badges-calidad'>
-<span class='badge-calidad'>1080p</span>
-</div>
-<div class='actores-disco'><img src='https://image.tmdb.org/t/p/w185/2KRlLNhaFWn5L8K5HiACfvSMqHn.jpg' class='actor-disco' alt='Soma Saito' title='Soma Saito'/><img src='https://image.tmdb.org/t/p/w185/aeB7z0cBTASdjKOjQriBAO6hYq4.jpg' class='actor-disco' alt='Rie Takahashi' title='Rie Takahashi'/><img src='https://image.tmdb.org/t/p/w185/eVdB6myaNJ4h38UU9hHHlsaCWHn.jpg' class='actor-disco' alt='Taku Yashiro' title='Taku Yashiro'/><img src='https://image.tmdb.org/t/p/w185/2HhTnfV6x5nStC7zBnBqgh7r3HY.jpg' class='actor-disco' alt='Makoto Koichi' title='Makoto Koichi'/><img src='https://image.tmdb.org/t/p/w185/cziKB19QMFJ6DQDtxTn07uRY2hq.jpg' class='actor-disco' alt='Saori Onishi' title='Saori Onishi'/></div>
-<ul>
-<li><b>Año:</b> 2023</li>
-<li><b>Sinopsis:</b> Readaptación de la serie manga principal.
-
-Hace ciento cuarenta años en Kioto, con la llegada de los "Barcos Negros" estadounidenses, surgió un guerrero que, derribando hombres con su espada ensangrentada, se ganó el nombre de Hitokiri, ¡asesino! Su espada asesina ayudó a cerrar la turbulenta era de Bakumatsu y abrió la era progresiva conocida como Meiji. Luego desapareció y, con el correr de los años, se convirtió en leyenda.</li>
-<li><b>Género:</b> Animación, Action & Adventure</li>
-<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/210879' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
-</ul>
-<div class='botones-fila'>
-<a class='emby-btn' href='emby://detail?itemId=210879' target='_blank'>
-                    <svg class='emby-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
-                        <g id="Layer_3">
-                        <linearGradient id="SVGID_1_" x1="13.96" x2="35.54" y1="12.88" y2="34.46" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#21ad64"/>
-                            <stop offset="1" stop-color="#088242"/>
-                        </linearGradient>
-                        <polygon fill="url(#SVGID_1_)" points="36.6,31.4 37.6,32.4 26.5,43.5 17.5,34.5 15.5,36.5 4.4,25.4 13.9,15.9 12.4,14.4 23.5,3.3 33,12.8 34.5,11.3 45.6,22.4"/>
-                        <linearGradient id="SVGID_00000132792886771557010450000012628389501577398928_" x1="26.817" x2="26.817" y1="16.069" y2="31.845" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#fcfcfc"/>
-                            <stop offset="1" stop-color="#c3c9cd"/>
-                        </linearGradient>
-                        <polygon fill="url(#SVGID_00000132792886771557010450000012628389501577398928_)" points="20.2,16.2 33.4,23.7 20.2,31.4"/>
-                        </g>
-                    </svg>
-                    ver en emby
-                </a>
-<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Rurouni+Kenshin+trailer+español' target='_blank'>
-                    <svg class='yt-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
-                        <path fill="#FF3D00" d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"/>
-                        <path fill="#FFF" d="M20 31L20 17 32 24z"/>
-                    </svg>
-                    tráiler
-                </a>
-</div>
-<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
-</div>
-<div class='novedad'>
-<div class="fanart-box">
-<img class='fanart' src='https://image.tmdb.org/t/p/w780/fTDX8bjUuykMf8z28BDoxUOK6TA.jpg' alt='Fanart'>
-</div>
-<div class="titulo-pelicula">
-I''s Pure
-</div>
-<div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>ANIME</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.6</span> TMDB</span></div>
-<div class='actores-disco'><img src='https://image.tmdb.org/t/p/w185/n47YvFPlJzl8HnsoDBtM8SUqG8q.jpg' class='actor-disco' alt='Shizuka Itoh' title='Shizuka Itoh'/><img src='https://image.tmdb.org/t/p/w185/5NbIjqvlOWpbKkEAh9XgfCcvu89.jpg' class='actor-disco' alt='野村勝人' title='野村勝人'/><img src='https://image.tmdb.org/t/p/w185/jb3fSusebJ0yDTZ6bB9ckL3mAvu.jpg' class='actor-disco' alt='門脇舞以' title='門脇舞以'/><img src='https://image.tmdb.org/t/p/w185/1VqFJ6oLDQAtSZHHj675QBTDqFD.jpg' class='actor-disco' alt='後藤邑子' title='後藤邑子'/><img src='https://image.tmdb.org/t/p/w185/8n4GV9jzelZnv5ZBdldwrjoVydI.jpg' class='actor-disco' alt='成瀬誠' title='成瀬誠'/><img src='https://image.tmdb.org/t/p/w185/lALDgD7y64P1IuONJqPFHkBaOcV.jpg' class='actor-disco' alt='こぶしのぶゆき' title='こぶしのぶゆき'/></div>
-<ul>
-<li><b>Año:</b> 2005</li>
-<li><b>Sinopsis:</b> Ichitaka Seto es un estudiante corriente de instituto que se ha enamorado de Iori, la chica más guapa de la clase. Pero no puede evitarlo, cada vez que la ve tiembla de arriba abajo. Aunque ha intentado declararse en numerosas ocasiones, todos sus intentos han sido fallidos... Basada en el manga de Masakazu Katsura, el film se divide en seis OVAs de 30 minutos cada una.</li>
-<li><b>Género:</b> Animación</li>
-<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/43180' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
-</ul>
-<div class='botones-fila'>
-<a class='emby-btn' href='emby://detail?itemId=43180' target='_blank'>
-                    <svg class='emby-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
-                        <g id="Layer_3">
-                        <linearGradient id="SVGID_1_" x1="13.96" x2="35.54" y1="12.88" y2="34.46" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#21ad64"/>
-                            <stop offset="1" stop-color="#088242"/>
-                        </linearGradient>
-                        <polygon fill="url(#SVGID_1_)" points="36.6,31.4 37.6,32.4 26.5,43.5 17.5,34.5 15.5,36.5 4.4,25.4 13.9,15.9 12.4,14.4 23.5,3.3 33,12.8 34.5,11.3 45.6,22.4"/>
-                        <linearGradient id="SVGID_00000132792886771557010450000012628389501577398928_" x1="26.817" x2="26.817" y1="16.069" y2="31.845" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#fcfcfc"/>
-                            <stop offset="1" stop-color="#c3c9cd"/>
-                        </linearGradient>
-                        <polygon fill="url(#SVGID_00000132792886771557010450000012628389501577398928_)" points="20.2,16.2 33.4,23.7 20.2,31.4"/>
-                        </g>
-                    </svg>
-                    ver en emby
-                </a>
-<a class='trailer-btn' href='https://www.youtube.com/results?search_query=I''s+Pure+trailer+español' target='_blank'>
-                    <svg class='yt-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
-                        <path fill="#FF3D00" d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"/>
-                        <path fill="#FFF" d="M20 31L20 17 32 24z"/>
-                    </svg>
-                    tráiler
-                </a>
-</div>
-<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
-</div>
-<div class='novedad'>
-<div class="fanart-box">
-<img class='fanart' src='https://image.tmdb.org/t/p/w780/pGW53bLFTUG8Gjx5SDb3hpDQ5Yd.jpg' alt='Fanart'>
-</div>
-<div class="titulo-pelicula">
-<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/97yvRBw1GzX7fXprcF80er19ot.jpg' alt='Disney Plus' title='Disney Plus'/>
-Doctor Odyssey
-</div>
-<div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>GENERAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.398</span> TMDB</span></div>
-<div class='badges-calidad'>
-<span class='badge-calidad'>1080p</span>
-</div>
-<div class='actores-disco'><img src='https://image.tmdb.org/t/p/w185/mH2a5YFd8J7upjjWwEzM75vitA2.jpg' class='actor-disco' alt='Joshua Jackson' title='Joshua Jackson'/><img src='https://image.tmdb.org/t/p/w185/1oKShCBjS2wxeAFqPuO2XSrpa5w.jpg' class='actor-disco' alt='Phillipa Soo' title='Phillipa Soo'/><img src='https://image.tmdb.org/t/p/w185/cPUrMPo9VTD4EgFbS9kASoVAiI7.jpg' class='actor-disco' alt='Sean Teale' title='Sean Teale'/><img src='https://image.tmdb.org/t/p/w185/6s6oav541p7xspCG6PvXut7knkP.jpg' class='actor-disco' alt='Don Johnson' title='Don Johnson'/></div>
-<ul>
-<li><b>Año:</b> 2024</li>
-<li><b>Sinopsis:</b> Max y su pequeño pero poderoso equipo médico se enfrentan a crisis médicas únicas y entre sí.</li>
-<li><b>Género:</b> Drama</li>
-<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/249695' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
-</ul>
-<div class='botones-fila'>
-<a class='emby-btn' href='emby://detail?itemId=249695' target='_blank'>
-                    <svg class='emby-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
-                        <g id="Layer_3">
-                        <linearGradient id="SVGID_1_" x1="13.96" x2="35.54" y1="12.88" y2="34.46" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#21ad64"/>
-                            <stop offset="1" stop-color="#088242"/>
-                        </linearGradient>
-                        <polygon fill="url(#SVGID_1_)" points="36.6,31.4 37.6,32.4 26.5,43.5 17.5,34.5 15.5,36.5 4.4,25.4 13.9,15.9 12.4,14.4 23.5,3.3 33,12.8 34.5,11.3 45.6,22.4"/>
-                        <linearGradient id="SVGID_00000132792886771557010450000012628389501577398928_" x1="26.817" x2="26.817" y1="16.069" y2="31.845" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#fcfcfc"/>
-                            <stop offset="1" stop-color="#c3c9cd"/>
-                        </linearGradient>
-                        <polygon fill="url(#SVGID_00000132792886771557010450000012628389501577398928_)" points="20.2,16.2 33.4,23.7 20.2,31.4"/>
-                        </g>
-                    </svg>
-                    ver en emby
-                </a>
-<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Doctor+Odyssey+trailer+español' target='_blank'>
-                    <svg class='yt-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
-                        <path fill="#FF3D00" d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"/>
-                        <path fill="#FFF" d="M20 31L20 17 32 24z"/>
-                    </svg>
-                    tráiler
-                </a>
-</div>
-<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
-</div>
-<div class='novedad'>
-<div class="fanart-box">
-<img class='fanart' src='https://image.tmdb.org/t/p/w780/5TZmTM2oEQHI7FrV7yUTZMEaSo0.jpg' alt='Fanart'>
-</div>
-<div class="titulo-pelicula">
-<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg' alt='Movistar Plus+ Ficción Total ' title='Movistar Plus+ Ficción Total '/>
-Home Town
-</div>
-<div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>REALITY</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.7</span> TMDB</span></div>
-<div class='badges-calidad'>
-<span class='badge-calidad'>1080p</span>
-</div>
-<div class='actores-disco'><img src='https://image.tmdb.org/t/p/w185/42xs6Z1I35Y5Qt5dvY1eV1OpnpC.jpg' class='actor-disco' alt='Erin Napier' title='Erin Napier'/><img src='https://image.tmdb.org/t/p/w185/yjHIyZtgsOz97qFJ71CoeUhbdf.jpg' class='actor-disco' alt='Ben Napier' title='Ben Napier'/></div>
-<ul>
-<li><b>Año:</b> 2016</li>
-<li><b>Sinopsis:</b> Ben y Erin Napier trabajan juntos para convertir casas antiguas en casas de ensueño.</li>
-<li><b>Género:</b> Reality</li>
-<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/71359' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
-</ul>
-<div class='botones-fila'>
-<a class='emby-btn' href='emby://detail?itemId=71359' target='_blank'>
-                    <svg class='emby-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
-                        <g id="Layer_3">
-                        <linearGradient id="SVGID_1_" x1="13.96" x2="35.54" y1="12.88" y2="34.46" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#21ad64"/>
-                            <stop offset="1" stop-color="#088242"/>
-                        </linearGradient>
-                        <polygon fill="url(#SVGID_1_)" points="36.6,31.4 37.6,32.4 26.5,43.5 17.5,34.5 15.5,36.5 4.4,25.4 13.9,15.9 12.4,14.4 23.5,3.3 33,12.8 34.5,11.3 45.6,22.4"/>
-                        <linearGradient id="SVGID_00000132792886771557010450000012628389501577398928_" x1="26.817" x2="26.817" y1="16.069" y2="31.845" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#fcfcfc"/>
-                            <stop offset="1" stop-color="#c3c9cd"/>
-                        </linearGradient>
-                        <polygon fill="url(#SVGID_00000132792886771557010450000012628389501577398928_)" points="20.2,16.2 33.4,23.7 20.2,31.4"/>
-                        </g>
-                    </svg>
-                    ver en emby
-                </a>
-<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Home+Town+trailer+español' target='_blank'>
-                    <svg class='yt-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
-                        <path fill="#FF3D00" d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"/>
-                        <path fill="#FFF" d="M20 31L20 17 32 24z"/>
-                    </svg>
-                    tráiler
-                </a>
-</div>
-<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
-</div>
-<div class='novedad'>
-<div class="fanart-box">
-<img class='fanart' src='https://image.tmdb.org/t/p/w780/czrAvoN103RYYX8lhkZPs2zgnkl.jpg' alt='Fanart'>
-</div>
-<div class="titulo-pelicula">
-<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg' alt='Crunchyroll' title='Crunchyroll'/>
-Wind Breaker
-</div>
-<div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>ANIME</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.073</span> TMDB</span></div>
-<div class='badges-calidad'>
-<span class='badge-calidad'>1080p</span>
-</div>
-<div class='actores-disco'><img src='https://image.tmdb.org/t/p/w185/2otstbLfQ7MXuFt1X8MFOb4OIgd.jpg' class='actor-disco' alt='Yuma Uchida' title='Yuma Uchida'/><img src='https://image.tmdb.org/t/p/w185/pF2urY77wuCYd9Fxh7dTirFYKSF.jpg' class='actor-disco' alt='Shoya Chiba' title='Shoya Chiba'/><img src='https://image.tmdb.org/t/p/w185/sllSm3iZZWVLTBrDZQRtWrZUfEj.jpg' class='actor-disco' alt='Koki Uchiyama' title='Koki Uchiyama'/><img src='https://image.tmdb.org/t/p/w185/qke5rZusHsjSlvB0NKlJ5dQF5D.jpg' class='actor-disco' alt='Nobunaga Shimazaki' title='Nobunaga Shimazaki'/><img src='https://image.tmdb.org/t/p/w185/4Xq18mQttuW2yfRCflnWoU7UqQ5.jpg' class='actor-disco' alt='Ryota Suzuki' title='Ryota Suzuki'/><img src='https://image.tmdb.org/t/p/w185/wb8behVKjBHX9XXrEydvNINCYwH.jpg' class='actor-disco' alt='Yuichi Nakamura' title='Yuichi Nakamura'/></div>
-<ul>
-<li><b>Año:</b> 2024</li>
-<li><b>Sinopsis:</b> El instituto Fûrin se ha ganado la peor reputación entre los centros de la zona por tener la media escolar más baja y los alumnos más rebeldes. Haruka Sakura es un joven recién llegado a la ciudad que quiere convertirse en el más fuerte del barrio para así proteger a todos aquellos que le importan. Para conseguir su propósito, lo primero que debe hacer es unirse a una pandilla llamada Wind Breaker, que representa a su instituto y cuyo objetivo es defender la ciudad del resto de bandas y maleantes. Sin embargo, ¡Para que lo acepten deberá ganarse el respeto a puñetazos!</li>
-<li><b>Género:</b> Animación, Action & Adventure</li>
-<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/223500' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
-</ul>
-<div class='botones-fila'>
-<a class='emby-btn' href='emby://detail?itemId=223500' target='_blank'>
-                    <svg class='emby-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
-                        <g id="Layer_3">
-                        <linearGradient id="SVGID_1_" x1="13.96" x2="35.54" y1="12.88" y2="34.46" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#21ad64"/>
-                            <stop offset="1" stop-color="#088242"/>
-                        </linearGradient>
-                        <polygon fill="url(#SVGID_1_)" points="36.6,31.4 37.6,32.4 26.5,43.5 17.5,34.5 15.5,36.5 4.4,25.4 13.9,15.9 12.4,14.4 23.5,3.3 33,12.8 34.5,11.3 45.6,22.4"/>
-                        <linearGradient id="SVGID_00000132792886771557010450000012628389501577398928_" x1="26.817" x2="26.817" y1="16.069" y2="31.845" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#fcfcfc"/>
-                            <stop offset="1" stop-color="#c3c9cd"/>
-                        </linearGradient>
-                        <polygon fill="url(#SVGID_00000132792886771557010450000012628389501577398928_)" points="20.2,16.2 33.4,23.7 20.2,31.4"/>
-                        </g>
-                    </svg>
-                    ver en emby
-                </a>
-<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Wind+Breaker+trailer+español' target='_blank'>
-                    <svg class='yt-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
-                        <path fill="#FF3D00" d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"/>
-                        <path fill="#FFF" d="M20 31L20 17 32 24z"/>
-                    </svg>
-                    tráiler
-                </a>
-</div>
-<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
-</div>
-<div class='novedad'>
-<div class="fanart-box">
-<img class='fanart' src='https://image.tmdb.org/t/p/w780/nq6fjPcMWvxkbiiXs8nYNe0j6Z6.jpg' alt='Fanart'>
-</div>
-<div class="titulo-pelicula">
-<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg' alt='Netflix' title='Netflix'/>
-Demasiado
-</div>
-<div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>GENERAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.444</span> TMDB</span></div>
-<div class='badges-calidad'>
-<span class='badge-calidad'>1080p</span>
-</div>
-<div class='actores-disco'><img src='https://image.tmdb.org/t/p/w185/ohGvsy7IlJgKs33x3TTQIEL168v.jpg' class='actor-disco' alt='Megan Stalter' title='Megan Stalter'/><img src='https://image.tmdb.org/t/p/w185/1pzdCm3m1kWn7YLTMbVvwT5O4jZ.jpg' class='actor-disco' alt='Will Sharpe' title='Will Sharpe'/><img src='https://image.tmdb.org/t/p/w185/6UXv8E4WWvRCKMQx1FQ0FJVyu0a.jpg' class='actor-disco' alt='Richard E. Grant' title='Richard E. Grant'/><img src='https://image.tmdb.org/t/p/w185/dH7GuUZ8QPM9RN99ak9KKOkSkdS.jpg' class='actor-disco' alt='Stephen Fry' title='Stephen Fry'/><img src='https://image.tmdb.org/t/p/w185/v3uzLqWC0plJAbwHyG7N9BKcunf.jpg' class='actor-disco' alt='Janicza Bravo' title='Janicza Bravo'/><img src='https://image.tmdb.org/t/p/w185/8fq9xIPOyYgIY7Y5Pgk4RyC0L8l.jpg' class='actor-disco' alt='Michael Zegen' title='Michael Zegen'/></div>
-<ul>
-<li><b>Año:</b> 2025</li>
-<li><b>Sinopsis:</b> Tras una ruptura, una neoyorquina se muda a Londres en busca de amor y se enamora de un músico indie que es todo menos el clásico héroe romántico.</li>
-<li><b>Género:</b> Comedia, Drama</li>
-<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/241361' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
-</ul>
-<div class='botones-fila'>
-<a class='emby-btn' href='emby://detail?itemId=241361' target='_blank'>
-                    <svg class='emby-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
-                        <g id="Layer_3">
-                        <linearGradient id="SVGID_1_" x1="13.96" x2="35.54" y1="12.88" y2="34.46" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#21ad64"/>
-                            <stop offset="1" stop-color="#088242"/>
-                        </linearGradient>
-                        <polygon fill="url(#SVGID_1_)" points="36.6,31.4 37.6,32.4 26.5,43.5 17.5,34.5 15.5,36.5 4.4,25.4 13.9,15.9 12.4,14.4 23.5,3.3 33,12.8 34.5,11.3 45.6,22.4"/>
-                        <linearGradient id="SVGID_00000132792886771557010450000012628389501577398928_" x1="26.817" x2="26.817" y1="16.069" y2="31.845" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#fcfcfc"/>
-                            <stop offset="1" stop-color="#c3c9cd"/>
-                        </linearGradient>
-                        <polygon fill="url(#SVGID_00000132792886771557010450000012628389501577398928_)" points="20.2,16.2 33.4,23.7 20.2,31.4"/>
-                        </g>
-                    </svg>
-                    ver en emby
-                </a>
-<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Demasiado+trailer+español' target='_blank'>
-                    <svg class='yt-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
-                        <path fill="#FF3D00" d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"/>
-                        <path fill="#FFF" d="M20 31L20 17 32 24z"/>
-                    </svg>
-                    tráiler
-                </a>
-</div>
-<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
-</div>
-<div class='novedad'>
-<div class="fanart-box">
-<img class='fanart' src='https://image.tmdb.org/t/p/w780/kobz3t4TKPXRUGUpcV3Ic7sgLtW.jpg' alt='Fanart'>
-</div>
-<div class="titulo-pelicula">
-<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg' alt='Netflix' title='Netflix'/>
-Leviathan
-</div>
-<div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>ANIME</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.0</span> TMDB</span></div>
-<div class='badges-calidad'>
-<span class='badge-calidad'>1080p</span>
-</div>
-<div class='actores-disco'><img src='https://image.tmdb.org/t/p/w185/3aGM6KpcCIEKOXP9510tzaKc8uw.jpg' class='actor-disco' alt='Ayumu Murase' title='Ayumu Murase'/><img src='https://image.tmdb.org/t/p/w185/9B9NICRp2li1SA3VF7vyIAxQ0x9.jpg' class='actor-disco' alt='Natsumi Fujiwara' title='Natsumi Fujiwara'/><img src='https://image.tmdb.org/t/p/w185/tbIQ3CFxZM9wl5S4YMwqhrs5VNS.jpg' class='actor-disco' alt='咲野俊介' title='咲野俊介'/><img src='https://image.tmdb.org/t/p/w185/geGINzuHDYkL3ghBnGx2gF3IROu.jpg' class='actor-disco' alt='Yasuhiro Mamiya' title='Yasuhiro Mamiya'/><img src='https://image.tmdb.org/t/p/w185/iYnpn1e7Ba1oMK8ZdgAvqzxng9e.jpg' class='actor-disco' alt='Mie Sonozaki' title='Mie Sonozaki'/><img src='https://image.tmdb.org/t/p/w185/a9gjzkczje0JXxiSFTysZ4kOYY3.jpg' class='actor-disco' alt='Ivan Shibata' title='Ivan Shibata'/></div>
-<ul>
-<li><b>Año:</b> 2025</li>
-<li><b>Sinopsis:</b> En un pasado alternativo de estética ‘steampunk’, un príncipe austriaco a la fuga y un aviador escocés de incógnito emprenden una misión inesperada para evitar una guerra mundial.</li>
-<li><b>Género:</b> Animación, Action & Adventure, Sci-Fi & Fantasy</li>
-<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/256323' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
-</ul>
-<div class='botones-fila'>
-<a class='emby-btn' href='emby://detail?itemId=256323' target='_blank'>
-                    <svg class='emby-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
-                        <g id="Layer_3">
-                        <linearGradient id="SVGID_1_" x1="13.96" x2="35.54" y1="12.88" y2="34.46" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#21ad64"/>
-                            <stop offset="1" stop-color="#088242"/>
-                        </linearGradient>
-                        <polygon fill="url(#SVGID_1_)" points="36.6,31.4 37.6,32.4 26.5,43.5 17.5,34.5 15.5,36.5 4.4,25.4 13.9,15.9 12.4,14.4 23.5,3.3 33,12.8 34.5,11.3 45.6,22.4"/>
-                        <linearGradient id="SVGID_00000132792886771557010450000012628389501577398928_" x1="26.817" x2="26.817" y1="16.069" y2="31.845" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#fcfcfc"/>
-                            <stop offset="1" stop-color="#c3c9cd"/>
-                        </linearGradient>
-                        <polygon fill="url(#SVGID_00000132792886771557010450000012628389501577398928_)" points="20.2,16.2 33.4,23.7 20.2,31.4"/>
-                        </g>
-                    </svg>
-                    ver en emby
-                </a>
-<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Leviathan+trailer+español' target='_blank'>
-                    <svg class='yt-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
-                        <path fill="#FF3D00" d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"/>
-                        <path fill="#FFF" d="M20 31L20 17 32 24z"/>
-                    </svg>
-                    tráiler
-                </a>
-</div>
-<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
-</div>
-<div class='novedad'>
-<div class="fanart-box">
-<img class='fanart' src='https://image.tmdb.org/t/p/w780/tG8EUw9lYeZsPrDL4vePhLWj7D.jpg' alt='Fanart'>
-</div>
-<div class="titulo-pelicula">
-<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg' alt='Movistar Plus+ Ficción Total ' title='Movistar Plus+ Ficción Total '/>
-Matices
-</div>
-<div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>GENERAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>5.667</span> TMDB</span></div>
-<div class='badges-calidad'>
-<span class='badge-calidad'>1080p</span>
-<span class='badge-calidad'>4K</span>
-</div>
-<div class='actores-disco'><img src='https://image.tmdb.org/t/p/w185/fsA7hxz70SVvCm8dZuAGvBHtVDF.jpg' class='actor-disco' alt='Elsa Pataky' title='Elsa Pataky'/><img src='https://image.tmdb.org/t/p/w185/pCbXRk44XYJzWDzYybAco5dlGF7.jpg' class='actor-disco' alt='Eusebio Poncela' title='Eusebio Poncela'/><img src='https://image.tmdb.org/t/p/w185/o5cGKWHlZl4RFROYlT2hD95j0lN.jpg' class='actor-disco' alt='Hovik Keuchkerian' title='Hovik Keuchkerian'/><img src='https://image.tmdb.org/t/p/w185/7ZTdhzUCpG9jhsKJeTJbGn36v5F.jpg' class='actor-disco' alt='Luis Tosar' title='Luis Tosar'/><img src='https://image.tmdb.org/t/p/w185/sX0fOdN7Urawav29j24nVAjNgaC.jpg' class='actor-disco' alt='Maxi Iglesias' title='Maxi Iglesias'/><img src='https://image.tmdb.org/t/p/w185/32Jw0nSopcq3A78pNYGzZjlxrc4.jpg' class='actor-disco' alt='Miriam Giovanelli' title='Miriam Giovanelli'/></div>
-<ul>
-<li><b>Año:</b> 2025</li>
-<li><b>Sinopsis:</b> Seis pacientes psiquiátricos se reúnen en una bodega aislada para completar el tratamiento del doctor Marlow, pero cuando se produce una muerte sospechosa, todos se convierten en sospechosos de una investigación de asesinato.</li>
-<li><b>Género:</b> Crimen, Misterio</li>
-<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/259854' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
-</ul>
-<div class='botones-fila'>
-<a class='emby-btn' href='emby://detail?itemId=259854' target='_blank'>
-                    <svg class='emby-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
-                        <g id="Layer_3">
-                        <linearGradient id="SVGID_1_" x1="13.96" x2="35.54" y1="12.88" y2="34.46" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#21ad64"/>
-                            <stop offset="1" stop-color="#088242"/>
-                        </linearGradient>
-                        <polygon fill="url(#SVGID_1_)" points="36.6,31.4 37.6,32.4 26.5,43.5 17.5,34.5 15.5,36.5 4.4,25.4 13.9,15.9 12.4,14.4 23.5,3.3 33,12.8 34.5,11.3 45.6,22.4"/>
-                        <linearGradient id="SVGID_00000132792886771557010450000012628389501577398928_" x1="26.817" x2="26.817" y1="16.069" y2="31.845" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#fcfcfc"/>
-                            <stop offset="1" stop-color="#c3c9cd"/>
-                        </linearGradient>
-                        <polygon fill="url(#SVGID_00000132792886771557010450000012628389501577398928_)" points="20.2,16.2 33.4,23.7 20.2,31.4"/>
-                        </g>
-                    </svg>
-                    ver en emby
-                </a>
-<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Matices+trailer+español' target='_blank'>
-                    <svg class='yt-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
-                        <path fill="#FF3D00" d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"/>
-                        <path fill="#FFF" d="M20 31L20 17 32 24z"/>
-                    </svg>
-                    tráiler
-                </a>
-</div>
-<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
-</div>
-<div class='novedad'>
-<div class="fanart-box">
-<img class='fanart' src='https://image.tmdb.org/t/p/w780/ogm1LRxWwZlfXrQLVUfFBgQWQXc.jpg' alt='Fanart'>
-</div>
-<div class="titulo-pelicula">
-La voz kids
-</div>
-<div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>REALITY</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.0</span> TMDB</span></div>
-<div class='actores-disco'><img src='https://image.tmdb.org/t/p/w185/gfnrps3Z6xPNuSjkiG9DvJkKV4V.jpg' class='actor-disco' alt='Eva González' title='Eva González'/><img src='https://image.tmdb.org/t/p/w185/uXIXWpRGt8AE6GX3IN68dHj6Sh8.jpg' class='actor-disco' alt='David Bisbal' title='David Bisbal'/><img src='https://image.tmdb.org/t/p/w185/u5TD82NPYyCChHKSGXM4UGZVbuk.jpg' class='actor-disco' alt='Lola Índigo' title='Lola Índigo'/><img src='https://image.tmdb.org/t/p/w185/iuLceEpdXfrA6njwlpLpIZ32VVA.jpg' class='actor-disco' alt='Manuel Turizo' title='Manuel Turizo'/><img src='https://image.tmdb.org/t/p/w185/wuLJx5IK9t7mb1lof8NCzzcKZmf.jpg' class='actor-disco' alt='Edurne' title='Edurne'/></div>
-<ul>
-<li><b>Año:</b> 2014</li>
-<li><b>Sinopsis:</b> La voz kids es un concurso de talentos español. Este formato consiste en elegir entre un grupo de concursantes a aquellos que destaquen por sus cualidades vocales sin que su imagen influya en la decisión del jurado.</li>
-<li><b>Género:</b> Reality, Kids</li>
-<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/93530' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
-</ul>
-<div class='botones-fila'>
-<a class='emby-btn' href='emby://detail?itemId=93530' target='_blank'>
-                    <svg class='emby-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
-                        <g id="Layer_3">
-                        <linearGradient id="SVGID_1_" x1="13.96" x2="35.54" y1="12.88" y2="34.46" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#21ad64"/>
-                            <stop offset="1" stop-color="#088242"/>
-                        </linearGradient>
-                        <polygon fill="url(#SVGID_1_)" points="36.6,31.4 37.6,32.4 26.5,43.5 17.5,34.5 15.5,36.5 4.4,25.4 13.9,15.9 12.4,14.4 23.5,3.3 33,12.8 34.5,11.3 45.6,22.4"/>
-                        <linearGradient id="SVGID_00000132792886771557010450000012628389501577398928_" x1="26.817" x2="26.817" y1="16.069" y2="31.845" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#fcfcfc"/>
-                            <stop offset="1" stop-color="#c3c9cd"/>
-                        </linearGradient>
-                        <polygon fill="url(#SVGID_00000132792886771557010450000012628389501577398928_)" points="20.2,16.2 33.4,23.7 20.2,31.4"/>
-                        </g>
-                    </svg>
-                    ver en emby
-                </a>
-<a class='trailer-btn' href='https://www.youtube.com/results?search_query=La+voz+kids+trailer+español' target='_blank'>
                     <svg class='yt-logo' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
                         <path fill="#FF3D00" d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"/>
                         <path fill="#FFF" d="M20 31L20 17 32 24z"/>
