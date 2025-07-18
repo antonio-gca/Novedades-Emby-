@@ -34,169 +34,195 @@ h2 {
     border: 1.3px solid #232427;
     max-width: 700px;
 }
-.fanart-box { position: relative; width: 100%; }
+/* Fanart + clearlogo */
+.fanart-box { position: relative; width: 100%; margin-bottom: 14px; }
 .fanart {
-    width: 100%; max-height: 245px; object-fit:cover;
+    width: 100%;
+    max-height: 245px;
+    object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 0px 24px #0b0b0f7c;
-    margin-bottom: 10px;
 }
 .clearlogo {
     position: absolute;
-    left: 24px;
-    top: 17px;
-    width: 36%; min-width:105px; max-width:240px;
+    left: 16px;
+    bottom: 16px;
+    width: 30%; min-width: 110px; max-width: 200px;
     height: auto;
-    filter: drop-shadow(0 3px 12px #181520c0) drop-shadow(0 0px 2px #202020cc);
-    opacity: .98;
-    z-index: 5;
+    filter: drop-shadow(0 3px 13px #0c1013bb);
+    opacity: 0.98;
+    z-index: 10;
     background: none;
 }
+/* Texto nombre alineado a la izquierda, debajo del fanart */
 .titulo-pelicula {
-    font-size: 1.35em;
-    letter-spacing:.01em;
-    font-weight: bold;
+    font-size: 1.48em;
+    letter-spacing: 0.01em;
+    font-weight: 700;
     color: #ededed;
-    margin: 11px 0 7px 0;
-    padding: 0 0 0 1px;
+    margin: 0 0 9px 2px;
+    padding: 0;
     text-align: left;
 }
+/* Badges fila tipo + categoría + rating */
 .badge-row {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin: 2px 0 0 0;
+    gap: 12px;
+    margin-bottom: 15px;
 }
 .badge-type {
-    padding: 3px 12px 3px 12px;
-    margin-right: 7px;
-    font-size: 13.4px;
+    padding: 5px 16px;
+    font-size: 14px;
     color: #fff;
-    font-weight: bold;
-    border-radius: 6px;
-    background: #6074dd; /* default */
-    border: none;
-    display: inline-block;
+    font-weight: 700;
+    border-radius: 8px;
+    background: #3cc47a; /* verde para película por defecto */
     text-transform: uppercase;
-    letter-spacing: .02em;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    user-select: none;
 }
-.badge-type.pelicula { background: #3cc47a; }
-.badge-type.serie    { background: #33bbf6; }
-
+.badge-type.serie {
+    background: #33bbf6; /* azul para serie */
+}
 .categoria-badge {
-    padding: 3px 13px 3px 13px;
-    margin-right: 7px;
-    font-size: 13.2px;
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
+    white-space: nowrap;
+    user-select: none;
     color: #fff;
-    font-weight: bold;
-    border-radius: 6px;
-    border: none;
-    display: inline-block;
-    background: #bb6be0;
     text-transform: capitalize;
-    letter-spacing: .01em;
 }
 .categoria-badge.accion { background: #ff884d;}
-.categoria-badge.drama  { background: #5fc6e0;}
-.categoria-badge.comedia{ background: #f6b82e;}
-.categoria-badge.animacion{background: #b6db36;}
-.categoria-badge.documental{background: #45cf8a;}
-.categoria-badge.terror{ background: #e94664;}
-/* añada más según tus categorías principales */
-
+.categoria-badge.drama { background: #5fc6e0;}
+.categoria-badge.comedia { background: #f6b82e;}
+.categoria-badge.animacion { background: #b6db36;}
+.categoria-badge.documental { background: #45cf8a;}
+.categoria-badge.terror { background: #e94664;}
+/* Rating con estrella */
 .rating-block {
     display: flex;
     align-items: center;
-    gap: 7px;
-    margin-left: 3px;
+    gap: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #ededed;
+    user-select: none;
+    white-space: nowrap;
 }
 .icon-estrella {
-    width: 18px; height: 18px;
-    display: inline-block;
-    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    fill: #ff3838;
+    stroke: #bb1111;
+    stroke-width: 1px;
 }
-ul { margin-top: 13px; padding-left: 24px; }
-.emby-btn,.trailer-btn {
+ul {
+    margin-top: 12px;
+    padding-left: 24px;
+    color: #d7d7d7;
+}
+.badges-calidad {
+    margin-top: 18px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+/* Badges de calidad estilo box, sin relleno, borde blanco */
+.badge-calidad {
+    padding: 3px 14px;
+    border: 2px solid #fff;
+    background: transparent !important;
+    color: #ededed;
+    font-size: 13px;
+    font-family: inherit;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    user-select: none;
+    white-space: nowrap;
+}
+/* Botones mismo color claro que fondo y diferenciados */
+.emby-btn, .trailer-btn {
     background: #262c38;
     color: #ededed;
-    border-radius: 8px;
-    margin-top: 18px;
+    border-radius: 9px;
+    margin-top: 14px;
     margin-right: 12px;
-    padding: 12px 26px 11px 20px;
+    padding: 12px 24px 11px 18px;
     text-decoration: none;
     font-weight: 600;
     font-size: 16px;
     border: none;
     display: inline-flex;
     align-items: center;
-    transition: background .19s;
-    box-shadow: 0 2px 11px #1d202428;
+    transition: background .25s;
+    box-shadow: 0 2px 12px #1a1e2545;
+    user-select:none;
 }
-.emby-btn:hover,.trailer-btn:hover {
-    background: #3458db !important;
+.emby-btn:hover, .trailer-btn:hover {
+    background: #354368 !important;
 }
-.emby-logo,.yt-logo {
-    height: 22px; width: 22px; margin-right: 10px; vertical-align: middle;
+.emby-logo, .yt-logo {
+    height: 22px;
+    width: 22px;
+    margin-right: 10px;
+    vertical-align: middle;
 }
 .nota-app {
-    margin-top: 13px;
+    margin-top: 11px;
     font-size: 13px;
     color: #b9b9b9;
-    letter-spacing:0.01em;
-}
-.badges-calidad {
-    margin-top: 13px;
-    margin-bottom: 13px;
-    display: flex;
-    gap: 9px;
-    flex-wrap: wrap;
-    align-items: flex-start;
-}
-.badge-calidad {
-    padding: 2px 13px;
-    background: #343944;
-    color: #ededed;
-    font-size: 13px;
-    font-family: inherit;
-    border-radius: 6px;
-    margin: 0 7px 5px 0;
-    border: none;
     letter-spacing: 0.01em;
+}
+#darkmode-toggle {
+    position: fixed;
+    top: 14px;
+    right: 17px;
+    z-index: 100;
+    background: #292929;
+    color: #ededed;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
     font-weight: bold;
-    display: inline-block;
 }
 @media (max-width: 700px) {
     body { padding: 6px; }
-    .novedad { padding: 8px 3px 7px 8px; max-width:97vw;}
-    .clearlogo { min-width:70px; max-width:110px;}
+    .novedad { padding: 15px 12px 12px 18px; max-width: 98vw; }
+    .clearlogo { min-width: 80px; max-width: 120px; }
 }
 </style>
 <script>
-// Clasifica y da color a las categorias populares:
-document.addEventListener('DOMContentLoaded',()=>{
-  document.querySelectorAll('.categoria-badge').forEach(el=>{
-    let cat=el.textContent.trim().toLowerCase();
-    if(cat.includes('acci')) el.classList.add('accion');
-    else if(cat.includes('drama')) el.classList.add('drama');
-    else if(cat.includes('comed')) el.classList.add('comedia');
-    else if(cat.includes('ani')) el.classList.add('animacion');
-    else if(cat.includes('doc')) el.classList.add('documental');
-    else if(cat.includes('terror')) el.classList.add('terror');
-  });
+// Agrupa categorías populares con sus clases para color:
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.categoria-badge').forEach(el => {
+        let cat = el.textContent.toLowerCase();
+        if(cat.includes('acci')) el.classList.add('accion');
+        else if(cat.includes('drama')) el.classList.add('drama');
+        else if(cat.includes('comed')) el.classList.add('comedia');
+        else if(cat.includes('ani')) el.classList.add('animacion');
+        else if(cat.includes('doc')) el.classList.add('documental');
+        else if(cat.includes('terror')) el.classList.add('terror');
+    });
 });
 </script>
 </head><body>
 <button id='darkmode-toggle' onclick='document.body.classList.toggle("dark-mode");'>🌘 Alternar modo</button>
 <h1>Historial de Novedades</h1>
-<div class='fecha'>Última actualización: 18/07/2025 11:42</div>
+<div class='fecha'>Última actualización: 18/07/2025 11:52</div>
 
 <h2>Películas nuevas</h2>
 <div class='novedad'>
-<div class='titulo-pelicula'>Dovbush</div>
-<div class='badge-row'><span class='badge-type pelicula'>Película</span><span class='categoria-badge'>Película</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>7.4</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/AqLFZK2nykm6oURXFRHjOaAssqn.jpg' alt='Fanart'>
 </div>
+<div class='titulo-pelicula'>Dovbush</div>
+<div class='badge-row'><span class='badge-type pelicula'>Película</span><span class='categoria-badge'>Película</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.4</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 </div>
@@ -208,26 +234,26 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/movie/815029' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=815029' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=Dovbush+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>Code Geass: Lelouch of the Rebellion I — Initiation</div>
-<div class='badge-row'><span class='badge-type pelicula'>Película</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>7.1</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/cU9HXBinAA0Q67pWlsj0kpKfsG3.jpg' alt='Fanart'>
-<img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/477776/hdmovielogo/code-geass-lelouch-of-the-rebellion---awakening-5cf4f1c78feb6.png' alt='Logo'>
+<img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/477776/hdmovielogo/code-geass-lelouch-of-the-rebellion---awakening-5cf4f1c78feb6.png' alt='Clearlogo'>
 </div>
+<div class='titulo-pelicula'>Code Geass: Lelouch of the Rebellion I — Initiation</div>
+<div class='badge-row'><span class='badge-type pelicula'>Película</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.1</span> TMDB</span></div>
 <ul>
 <li><b>Año:</b> 2017</li>
 <li><b>Sinopsis:</b> </li>
@@ -236,26 +262,26 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/movie/477776' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=477776' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=Code+Geass:+Lelouch+of+the+Rebellion+I+—+Initiation+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>Las locas peripecias de un Sr. mamá</div>
-<div class='badge-row'><span class='badge-type pelicula'>Película</span><span class='categoria-badge'>Película</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>6.6</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/dQeXRjxH7Onfy8n0WCPD7bKHIo8.jpg' alt='Fanart'>
-<img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/13105/hdmovielogo/mr-mom-5745f40c54040.png' alt='Logo'>
+<img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/13105/hdmovielogo/mr-mom-5745f40c54040.png' alt='Clearlogo'>
 </div>
+<div class='titulo-pelicula'>Las locas peripecias de un Sr. mamá</div>
+<div class='badge-row'><span class='badge-type pelicula'>Película</span><span class='categoria-badge'>Película</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.6</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 </div>
@@ -267,25 +293,25 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/movie/13105' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=13105' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=Las+locas+peripecias+de+un+Sr.+mamá+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>Camino De Oregón</div>
-<div class='badge-row'><span class='badge-type pelicula'>Película</span><span class='categoria-badge'>Película</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>6.016</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/zI9KXvQEkku5cmcwKnubOY5JfhJ.jpg' alt='Fanart'>
 </div>
+<div class='titulo-pelicula'>Camino De Oregón</div>
+<div class='badge-row'><span class='badge-type pelicula'>Película</span><span class='categoria-badge'>Película</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.016</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 </div>
@@ -297,22 +323,22 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/movie/42703' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=42703' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=Camino+De+Oregón+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class='titulo-pelicula'>Nuestro Universo Infinito</div>
-<div class='badge-row'><span class='badge-type pelicula'>Película</span><span class='categoria-badge'>Documental</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>0.0</span> TMDB</span></div>
+<div class='badge-row'><span class='badge-type pelicula'>Película</span><span class='categoria-badge'>Documental</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>N/A</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 </div>
@@ -324,26 +350,26 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/movie/1341735' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=1341735' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=Nuestro+Universo+Infinito+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <h2>Series nuevas</h2>
 <div class='novedad'>
-<div class='titulo-pelicula'>Dragon Ball Z Kai</div>
-<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>7.5</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/oz5zbMBKCUsb7hsbjdxvK8yagPD.jpg' alt='Fanart'>
 </div>
+<div class='titulo-pelicula'>Dragon Ball Z Kai</div>
+<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.5</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 </div>
@@ -354,25 +380,25 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/tv/61709' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=61709' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=Dragon+Ball+Z+Kai+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>La cuenta atrás</div>
-<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>General</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>7.274</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/4pxGvtwxDlATy9nvJMvYL8u25LZ.jpg' alt='Fanart'>
 </div>
+<div class='titulo-pelicula'>La cuenta atrás</div>
+<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>General</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.274</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 </div>
@@ -383,25 +409,25 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/tv/256317' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=256317' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=La+cuenta+atrás+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>La desaparición de Amy Bradley</div>
-<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Documental</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>10.0</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/bx26v6trU13B2VfzSMfpMJe7OGb.jpg' alt='Fanart'>
 </div>
+<div class='titulo-pelicula'>La desaparición de Amy Bradley</div>
+<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Documental</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>10.0</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 </div>
@@ -412,25 +438,25 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/tv/294726' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=294726' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=La+desaparición+de+Amy+Bradley+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>Toradora!</div>
-<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>8.218</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/3IxznCOIYjajctSJ6BtlkDfJ22Y.jpg' alt='Fanart'>
 </div>
+<div class='titulo-pelicula'>Toradora!</div>
+<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.218</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 </div>
@@ -441,25 +467,25 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/tv/42916' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=42916' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=Toradora!+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>The Buccaneers: Aristócratas por amor</div>
-<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>General</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>7.1</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/iAnNhCoBKUXWoTxgmGYrv2Qc8Dm.jpg' alt='Fanart'>
 </div>
+<div class='titulo-pelicula'>The Buccaneers: Aristócratas por amor</div>
+<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>General</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.1</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 <span class='badge-calidad'>DV</span>
@@ -472,25 +498,25 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/tv/213338' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=213338' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=The+Buccaneers:+Aristócratas+por+amor+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>New PANTY & STOCKING with GARTERBELT</div>
-<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>10.0</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/eXxgT33OitzfmYol1kbTy7TKNOR.jpg' alt='Fanart'>
 </div>
+<div class='titulo-pelicula'>New PANTY & STOCKING with GARTERBELT</div>
+<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>10.0</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 </div>
@@ -501,26 +527,26 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/tv/246862' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=246862' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=New+PANTY+&+STOCKING+with+GARTERBELT+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>Sticks: Cracks del golf</div>
-<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>General</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>7.103</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/lqaT9mIxcVJs9QSUf0hdy0zW68C.jpg' alt='Fanart'>
-<img class='clearlogo' src='https://assets.fanart.tv/fanart/tv/248830/hdtvlogo/the-playboy-club-5437a6feba4f6.png' alt='Logo'>
+<img class='clearlogo' src='https://assets.fanart.tv/fanart/tv/248830/hdtvlogo/the-playboy-club-5437a6feba4f6.png' alt='Clearlogo'>
 </div>
+<div class='titulo-pelicula'>Sticks: Cracks del golf</div>
+<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>General</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.103</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 </div>
@@ -531,25 +557,25 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/tv/248830' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=248830' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=Sticks:+Cracks+del+golf+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>The Shiunji Family Children</div>
-<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>6.385</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/kVZcEY6PCeweU4GFWBOnlKAM28L.jpg' alt='Fanart'>
 </div>
+<div class='titulo-pelicula'>The Shiunji Family Children</div>
+<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.385</span> TMDB</span></div>
 <ul>
 <li><b>Año:</b> 2025</li>
 <li><b>Sinopsis:</b> La familia Shiunji y sus siete hijos residen en una mansión del barrio tokiota de Setagaya. El hijo mayor, Arata, está cansado de que sus cinco hermanas le mangoneen y fantasea con la posibilidad de vivir lejos de ellas. Sin embargo, el padre de Arata les revela algo sorprendente: ¡Arata no tiene parentesco biológico con sus hermanas! Con este nuevo dato sobre la mesa, las relaciones entre los hermanos cambiarán completamente.</li>
@@ -557,25 +583,25 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/tv/261091' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=261091' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=The+Shiunji+Family+Children+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>GUILTY GEAR STRIVE: DUAL RULERS</div>
-<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>6.5</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/7EDiFma8CrnbT9F05xNd50CZZrr.jpg' alt='Fanart'>
 </div>
+<div class='titulo-pelicula'>GUILTY GEAR STRIVE: DUAL RULERS</div>
+<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.5</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 </div>
@@ -586,25 +612,25 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/tv/282666' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=282666' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=GUILTY+GEAR+STRIVE:+DUAL+RULERS+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>Another</div>
-<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>8.358</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/lL0rMeVqiOyVwmft6oPKQKbDYr6.jpg' alt='Fanart'>
 </div>
+<div class='titulo-pelicula'>Another</div>
+<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.358</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 </div>
@@ -615,25 +641,25 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/tv/42589' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=42589' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=Another+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>Grand Blue</div>
-<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>7.694</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/pJqAgDico7ZTMAfAXyzldYqj5ME.jpg' alt='Fanart'>
 </div>
+<div class='titulo-pelicula'>Grand Blue</div>
+<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.694</span> TMDB</span></div>
 <ul>
 <li><b>Año:</b> 2018</li>
 <li><b>Sinopsis:</b> Cuando Iori Kitahara empieza la universidad, decide vivir en la tienda de buceo de su tío en Izu llamada Grand Blue. Iori está deseando estudiar, disfrutar de las olas, el sol y de la compañía de su primo que vive con él. Pero las cosas no salen exactamente como esperaba. Se encuentra con un grupo de estudiantes, que de inmediato lo obligan a participar en sus actividades alcohólicas. Aunque no estaba dispuesto al principio, Iori rápidamente se rinde y se convierte en el alma de la fiesta. Desafortunadamente, con eso gana el desprecio de su prima, Chisa Kotegawa. Sin embargo, Iori todavía promete cumplir su vida universitaria ideal, pero ¿las cosas irán de acuerdo con lo planeado esta vez?</li>
@@ -641,25 +667,25 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/tv/79166' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=79166' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=Grand+Blue+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>The Rising of the Shield Hero</div>
-<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>8.521</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/de6iC707SwuMsE3y2fo5OHCOsvj.jpg' alt='Fanart'>
 </div>
+<div class='titulo-pelicula'>The Rising of the Shield Hero</div>
+<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.521</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 </div>
@@ -670,25 +696,25 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/tv/83095' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=83095' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=The+Rising+of+the+Shield+Hero+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>Fire Force</div>
-<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>8.372</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/zDXuwmqkTi2lGM4AyloAAX4v51P.jpg' alt='Fanart'>
 </div>
+<div class='titulo-pelicula'>Fire Force</div>
+<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.372</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 </div>
@@ -699,26 +725,26 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/tv/88046' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=88046' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=Fire+Force+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>Dealing with Mikadono Sisters Is a Breeze</div>
-<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>8.5</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/yxCKl8PUUDmy0CTbWqBxfhHYRG6.jpg' alt='Fanart'>
-<img class='clearlogo' src='https://assets.fanart.tv/fanart/tv/272556/hdtvlogo/tenkai-knights-5c803dd77dd9c.png' alt='Logo'>
+<img class='clearlogo' src='https://assets.fanart.tv/fanart/tv/272556/hdtvlogo/tenkai-knights-5c803dd77dd9c.png' alt='Clearlogo'>
 </div>
+<div class='titulo-pelicula'>Dealing with Mikadono Sisters Is a Breeze</div>
+<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.5</span> TMDB</span></div>
 <ul>
 <li><b>Año:</b> 2025</li>
 <li><b>Sinopsis:</b> Yu Ayase, hijo de una legendaria actriz ya fallecida, es tremendamente mediocre. Cuando recibe una invitación para mudarse a casa de una amiga de su madre, Yu se sorprende al descubrir que vivirá con tres hermanas superdotadas que son tan guapas como inteligentes... y que gobiernan su nuevo instituto como las Tres Emperadoras. ¿Conseguirá Yu derretir los fríos corazones de las hermanas y cumplir el último deseo de su madre, que forme una familia feliz?</li>
@@ -726,25 +752,25 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/tv/272556' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=272556' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=Dealing+with+Mikadono+Sisters+Is+a+Breeze+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>Solo Camping for Two</div>
-<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>8.5</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/lPpKeKWD0dfHB8ZakfEavurVZ1T.jpg' alt='Fanart'>
 </div>
+<div class='titulo-pelicula'>Solo Camping for Two</div>
+<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>Anime</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.5</span> TMDB</span></div>
 <ul>
 <li><b>Año:</b> 2025</li>
 <li><b>Sinopsis:</b> Gen Kinokura solo quería disfrutar de sus tranquilas acampadas en solitario, sin distracciones ni problemas... o así era hasta que aparece Shizuku Kusano, una novata despistada pero muy optimista que se cuela en su campamento (literalmente). El ahora algo mosqueado amante del aire libre tendrá el marrón de enseñarle a la jovencita cómo funciona todo.</li>
@@ -752,25 +778,25 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/tv/281044' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=281044' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=Solo+Camping+for+Two+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>Los Borgia</div>
-<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>General</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>7.556</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/mbQi8FC2Gk762plIcZfYCE2Kcmj.jpg' alt='Fanart'>
 </div>
+<div class='titulo-pelicula'>Los Borgia</div>
+<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>General</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.556</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 </div>
@@ -781,25 +807,25 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/tv/33025' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=33025' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=Los+Borgia+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>Yellowstone</div>
-<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>General</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>8.256</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/hFFAYkK8XkvIlQss9GYxo8TOhFi.jpg' alt='Fanart'>
 </div>
+<div class='titulo-pelicula'>Yellowstone</div>
+<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>General</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.256</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 <span class='badge-calidad'>4K</span>
@@ -811,25 +837,25 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/tv/73586' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=73586' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=Yellowstone+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>The Equalizer</div>
-<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>General</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>7.361</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/z8CzVVAGHRRmgJQ6ZRjr8OuCmlj.jpg' alt='Fanart'>
 </div>
+<div class='titulo-pelicula'>The Equalizer</div>
+<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>General</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.361</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 </div>
@@ -840,25 +866,25 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/tv/95205' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=95205' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=The+Equalizer+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>El Lute: La Serie</div>
-<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>General</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>0.0</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/c17wJXhZqMD2sGLJE5kTTD6XTj3.jpg' alt='Fanart'>
 </div>
+<div class='titulo-pelicula'>El Lute: La Serie</div>
+<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>General</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>N/A</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 </div>
@@ -869,25 +895,25 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/tv/217617' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=217617' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=El+Lute:+La+Serie+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class='titulo-pelicula'>Vicios ocultos</div>
-<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>General</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24'><polygon fill='#ff3838' stroke='#bb1111' stroke-width='1' points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9'></polygon></svg><span>7.3</span> TMDB</span></div>
 <div class="fanart-box">
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/8NX2kBLHS6vSrl8Lg3Y2JAqzmy9.jpg' alt='Fanart'>
 </div>
+<div class='titulo-pelicula'>Vicios ocultos</div>
+<div class='badge-row'><span class='badge-type serie'>Serie</span><span class='categoria-badge'>General</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.3</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 <span class='badge-calidad'>DV</span>
@@ -900,17 +926,17 @@ document.addEventListener('DOMContentLoaded',()=>{
 <li><b>Info:</b> <a href='https://www.themoviedb.org/tv/241609' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
 <a class='emby-btn' href='emby://detail?itemId=241609' target='_blank'>
-                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <svg class='emby-logo' viewBox='0 0 256 256'>
+                <circle cx='128' cy='128' r='128' fill='#232E3E'/>
                 <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
-                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
-                Ver en App Emby
-                </a>
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/>
+                </svg>Ver en App Emby</a>
 <a class='trailer-btn' href='https://www.youtube.com/results?search_query=Vicios+ocultos+trailer+español' target='_blank'>
-                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <svg class='yt-logo' viewBox='0 0 100 100'>
+                <rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
                 <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
-                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
-                Ver tráiler
-                </a>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/>
+                </svg>Ver tráiler</a>
 <div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 </body></html>
