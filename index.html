@@ -4,7 +4,6 @@
 <meta charset='UTF-8'><title>Historial de Novedades Emby</title>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <style>
-
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background: #191a1e;
@@ -43,45 +42,64 @@ h2, h3 {
 }
 .fanart-box { position: relative; }
 .fanart {
-    width: 100%; max-height: 230px; object-fit:cover;
+    width: 100%;
+    height: 250px;
+    max-height: 270px;
+    object-fit: cover;
     border-radius: 8px;
     margin-bottom: 15px;
-    box-shadow: 0 0px 24px #0b0b0f7c;
+    box-shadow: 0 2px 30px #191a2fc0, 0 0px 16px #0b0b0f7c;
+    background: #35373a;
 }
 .clearlogo {
     position: absolute;
-    right: 12px; top: 15px;
-    width: 28%; min-width:65px; max-width:110px; height:auto;
+    left: 18px;
+    bottom: 16px;
+    width: 28%;
+    min-width:65px;
+    max-width:110px;
+    height:auto;
     pointer-events:none;
-    filter: drop-shadow(0 1px 8px #232d3199);
-    opacity: 0.94;
+    filter: drop-shadow(0 2px 11px #191a1fa7) drop-shadow(0 0px 2px #fff7);
+    opacity: 0.97;
     z-index: 4;
 }
 ul { margin-top: 2px; padding-left: 18px;}
 .badge, .categoria-badge {
-    background: #292b2e;
-    color: #ededed;
-    border-radius: 5px;
-    padding: 2px 8px;
-    font-size: 13px;
+    border: 1.3px solid #fff;
+    background: none;
+    color: #fff;
+    border-radius: 13px;
+    padding: 2.5px 13px;
+    font-size: 13.5px;
+    font-family: 'Segoe UI', Arial, sans-serif;
     margin-left: 7px;
     display: inline-block;
+    font-weight: 400;
+    box-sizing: border-box;
+    letter-spacing: 0.01em;
 }
 .badges-calidad {
     margin-bottom: 11px;
     display: flex;
-    gap: 8px;
+    gap: 9px;
     flex-wrap: wrap;
 }
-.badge-4k { background: #f5b11e; color: #222;}
-.badge-dv { background:#35ecb1; color:#111;}
-.badge-hdr10 { background:#3297ff; color:#fff;}
-.badge-1080p { background:#364048; color:#fff;}
+.badge-4k, .badge-1080p, .badge-dv, .badge-hdr10 {
+    border: 1.3px solid #fff;
+    background: none;
+    color: #fff;
+    border-radius: 13px;
+    font-size: 13.5px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    padding: 2.5px 13px;
+    font-weight: 400;
+}
 .emby-btn, .trailer-btn {
-    background: #242528;
+    background: #31383d;
     color: #fff;
     border-radius: 7px;
-    margin-top: 11px;
+    margin-top: 15px;
     margin-right: 8px;
     padding: 10px 20px 10px 16px;
     text-decoration: none;
@@ -95,7 +113,7 @@ ul { margin-top: 2px; padding-left: 18px;}
     transition: background .22s;
 }
 .emby-btn:hover, .trailer-btn:hover {
-    background: #393a3e;
+    background: #545c64;
 }
 .emby-logo, .yt-logo {
     height: 22px; width: 22px; margin-right: 8px; vertical-align: middle;
@@ -107,16 +125,27 @@ ul { margin-top: 2px; padding-left: 18px;}
     letter-spacing:0.01em;
 }
 #darkmode-toggle {
-    position:fixed; top:14px; right:17px; z-index:100;
-    background:#292929; color:#ededed; border:none;
-    padding:8px 15px; border-radius:8px; cursor:pointer; font-weight:bold;
+    position:fixed; top:24px; right:21px; z-index:100;
+    background: #fff;
+    color: #222326;
+    border:none;
+    padding: 9px 17px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 1px 11px #0002;
+    transition: background .2s, color .2s;
+}
+#darkmode-toggle:hover {
+    background: #dde0e4;
+    color: #11181f;
 }
 @media (max-width: 700px) {
     body {padding:6px;}
     .novedad {padding:9px 3px 7px 6px; max-width:100vw;}
+    .fanart {height: 155px; max-height:190px;}
+    .clearlogo{min-width:45px; max-width:70px;}
 }
-</style>
-
 </style>
 <script>
 function toggleDarkMode() {
@@ -135,9 +164,9 @@ window.onload = function() {
 </script>
 </head><body>
 
-<button id='darkmode-toggle' onclick='toggleDarkMode()'>🌘 Alternar modo</button>
+<button id='darkmode-toggle' onclick='toggleDarkMode()'>🌙 Modo oscuro</button>
 <h1>Historial de Novedades</h1>
-<div class='fecha'>Última actualización: 18/07/2025 09:33</div>
+<div class='fecha'>Última actualización: 18/07/2025 09:47</div>
 <h2>Películas nuevas</h2>
 <div class='novedad'>
 <div class="fanart-box">
