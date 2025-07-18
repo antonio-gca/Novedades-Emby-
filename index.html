@@ -9,33 +9,30 @@ body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background: #191a1e; color: #ededed; margin:0; padding: 30px; box-sizing: border-box;
 }
-h1 { font-size:2.28em; font-weight:bold; color:#ededed; border-bottom:2px solid #303031; padding-bottom:10px; margin-bottom:22px; max-width:100vw;}
+h1 { font-size:2.33em; font-weight:bold; color:#ededed; border-bottom:2px solid #303031; padding-bottom:10px; margin-bottom:22px; max-width:100vw;}
 h2 { margin-top:32px; color:#ededed; font-size:1.3em; font-weight:700;}
 .novedad {
-    margin-bottom:33px; background:#222326; border-radius:10px; box-shadow:0 3px 22px #191a1f61;
+    margin-bottom:33px; background:#292d34; /* más claro */
+    border-radius:10px; box-shadow:0 3px 22px #191a1f61;
     padding:18px 13px 12px 13px; border:1.3px solid #232427; max-width:710px; width:100%;
     box-sizing:border-box; margin-left:auto; margin-right:auto;
 }
 .fanart-box { position:relative; width:100%; margin-bottom:18px;}
 .fanart { width:100%; max-height:265px; object-fit:cover; border-radius:8px; box-shadow:0 0px 24px #0b0b0f7c; }
 .clearlogo {
-    position:absolute; left:4px; bottom:4px; width:44%; min-width:135px; max-width:320px;
+    position:absolute; left:4px; bottom:4px; width:44%; min-width:135px; max-width:330px;
     height:auto; filter:drop-shadow(0 4px 16px #1a202c) drop-shadow(0 0px 2px #2e2e2ecc); opacity:.998;
     z-index:11; pointer-events:none;
 }
 .titulo-pelicula {
-    font-size:1.65em; letter-spacing:0.01em; font-weight:900; color:#ededed;
+    font-size:2.02em; letter-spacing:0.01em; font-weight:900; color:#ededed;
     margin:0 0 12px 2px; padding:0 1px; text-align:left; max-width:97vw;
-    overflow: hidden; word-break:break-word; display:flex; align-items:center; gap:11px;
+    overflow: hidden; word-break:break-word; display:flex; align-items:center; gap:15px;
 }
-.estudio-logo-bg {
-    display:inline-block; border-radius:50%; vertical-align:middle; margin-right:10px;
-    background: linear-gradient(135deg, #232a34 70%, #ededed26 100%);
-    padding:4px; /* Fondo para visibilidad en logos oscuros o transparentes */
-}
-.estudio-logo {
-    width:32px; height:32px; border-radius:50%; background:transparent;
-    object-fit:contain; display:block; border:0; margin:0;
+.plataforma-logo {
+    width:38px; height:38px; border-radius:50%; object-fit:contain; display:block; border:none; margin:0;
+    background:none; vertical-align:middle;
+    filter: drop-shadow(0 2px 15px #0f1117b8) drop-shadow(0 0 2px #fff8);
 }
 .badge-row {
     display:flex; align-items:center; gap:10px; margin-bottom:11px; margin-left:2px; flex-wrap:wrap;
@@ -53,22 +50,21 @@ h2 { margin-top:32px; color:#ededed; font-size:1.3em; font-weight:700;}
 .icon-estrella {
     width:18px; height:18px; fill:#ff3838; stroke:#bb1111; stroke-width:1.2px;
 }
-.badges-calidad {margin-top: 13px; margin-bottom: 12px; display:flex; gap:12px; flex-wrap:wrap;}
+.badges-calidad {margin-top: 13px; margin-bottom: 11px; display:flex; gap:13px; flex-wrap:wrap;}
 .badge-calidad {
     padding:2.5px 14px; border:2px solid #fff; background:transparent !important; color:#ededed;
     font-size:13px; border-radius:8px; font-weight:600; letter-spacing: 0.01em;
     user-select:none; white-space:nowrap; box-shadow:none;
 }
 .actores-disco {
-    display:flex; gap: calc((100vw - 190px)/14); justify-content:space-between; margin:16px 0 10px 0; align-items:center;
-    width:100%;
+    display:flex; gap:14px; justify-content:space-between; margin:15px 0 7px 0; width:100%;
 }
 .actor-disco {
-    width:calc(100vw / 8); max-width:74px; min-width:29px; height:auto; border-radius:50%; background:#181b1e;
-    border:2.7px solid #262326; object-fit:cover; box-shadow:0 3px 12px #191a1f26;
-    aspect-ratio:1/1;
+    width:calc(98vw / 7); max-width:78px; min-width:38px; height:auto;
+    border-radius:50%; aspect-ratio:1/1; border:2.7px solid #262326;
+    object-fit:cover; box-shadow:0 3px 12px #191a1f26;
 }
-ul { margin-top:8px; padding-left:17px; color:#d7d7d7; max-width:100vw; word-break:break-word;}
+ul { margin-top:9px; padding-left:17px; color:#d7d7d7; max-width:100vw; word-break:break-word;}
 .botones-fila {
     display:flex; flex-wrap:wrap; gap:10px; margin-top:11px; margin-left:2px; align-items:center;
 }
@@ -89,7 +85,7 @@ ul { margin-top:8px; padding-left:17px; color:#d7d7d7; max-width:100vw; word-bre
     body { padding:5px; }
     .novedad { padding:9px 1vw 9px 1vw; max-width:99vw;}
     .clearlogo { min-width:95px; max-width:170px;}
-    .titulo-pelicula { font-size:1.11em;}
+    .titulo-pelicula { font-size:1.19em;}
     .badge-row, .botones-fila { flex-wrap:wrap;}
     .actores-disco { gap:4px; }
 }
@@ -97,7 +93,7 @@ ul { margin-top:8px; padding-left:17px; color:#d7d7d7; max-width:100vw; word-bre
 </head><body>
 <button id='darkmode-toggle' onclick='document.body.classList.toggle("dark-mode");'>🌘 Alternar modo</button>
 <h1>Historial de Novedades</h1>
-<div class='fecha'>Última actualización: 18/07/2025 13:12</div>
+<div class='fecha'>Última actualización: 18/07/2025 14:47</div>
 
 <h2>Películas nuevas</h2>
 <div class='novedad'>
@@ -105,7 +101,6 @@ ul { margin-top:8px; padding-left:17px; color:#d7d7d7; max-width:100vw; word-bre
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/AqLFZK2nykm6oURXFRHjOaAssqn.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/euBjmhVMZX1K6wjljsFRAE0Uchb.png' alt='Pronto Film' title='Pronto Film'/></span>
 Dovbush
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.4</span> TMDB</span></div>
@@ -142,7 +137,6 @@ Dovbush
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/477776/hdmovielogo/code-geass-lelouch-of-the-rebellion---awakening-5cf4f1c78feb6.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/yKZ9UarLSu9Y4Gpw33nKRQOPM7z.png' alt='SUNRISE' title='SUNRISE'/></span>
 Code Geass: Lelouch of the Rebellion I — Initiation
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>ANIME</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.1</span> TMDB</span></div>
@@ -176,7 +170,7 @@ Code Geass: Lelouch of the Rebellion I — Initiation
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/13105/hdmovielogo/mr-mom-5745f40c54040.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/qZCc1lty5FzX30aOCVRBLzaVmcp.png' alt='20th Century Fox' title='20th Century Fox'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg' alt='MGM Plus Amazon Channel' title='MGM Plus Amazon Channel'/>
 Las locas peripecias de un Sr. mamá
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.6</span> TMDB</span></div>
@@ -212,7 +206,7 @@ Las locas peripecias de un Sr. mamá
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/zI9KXvQEkku5cmcwKnubOY5JfhJ.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/4YldLvCWQL9VIAHQ2Fu3Ffkh9Si.png' alt='United Artists' title='United Artists'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/kO2SWXvDCHAquaUuTJBuZkTBAuU.jpg' alt='Filmin' title='Filmin'/>
 Camino De Oregón
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.016</span> TMDB</span></div>
@@ -280,7 +274,6 @@ Nuestro Universo Infinito
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/4942/hdmovielogo/leatherheads-56d15298854e2.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/3wwjVpkZtnog6lSKzWDjvw2Yi00.png' alt='Universal Pictures' title='Universal Pictures'/></span>
 Ella es el partido
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>5.851</span> TMDB</span></div>
@@ -317,7 +310,6 @@ Ella es el partido
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/64635/hdmovielogo/total-recall-53592e3f3f0b2.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/5xUJfzPZ8jWJUDzYtIeuPO4qPIa.png' alt='Original Film' title='Original Film'/></span>
 Desafío total
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.025</span> TMDB</span></div>
@@ -355,7 +347,7 @@ Desafío total
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/300681/hdmovielogo/replicas-5ca3526f8f308.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/AjzK0s2w1GtLfR4hqCjVSYi0Sr8.png' alt='di Bonaventura Pictures' title='di Bonaventura Pictures'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/8VhN4PeHU7yfMNoWK0DnwdS1HlS.jpg' alt='Tivify' title='Tivify'/>
 Réplicas
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.037</span> TMDB</span></div>
@@ -393,7 +385,7 @@ Réplicas
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/447273/hdmovielogo/disneys-snow-white-66ba18a14af4b.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/wdrCwmRnLFJhEoH8GSfymY85KHT.png' alt='Walt Disney Pictures' title='Walt Disney Pictures'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/97yvRBw1GzX7fXprcF80er19ot.jpg' alt='Disney Plus' title='Disney Plus'/>
 Blancanieves
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>4.294</span> TMDB</span></div>
@@ -433,7 +425,7 @@ Blancanieves
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/587792/hdmovielogo/palm-springs-5ed06f3e5a5e9.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/a9YkOw7I1CCBOc9Cy1FDGYfFrJm.png' alt='Limelight' title='Limelight'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/pvske1MyAoymrs5bguRfVqYiM9a.jpg' alt='Amazon Prime Video' title='Amazon Prime Video'/>
 Palm Springs
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.3</span> TMDB</span></div>
@@ -470,7 +462,7 @@ Palm Springs
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/969492/hdmovielogo/land-of-bad-65a620cf672a0.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/hO9hMQIAUvSEVJHBUdtrsXWfoRu.png' alt='Volition Media Partners' title='Volition Media Partners'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/jse4MOi92Jgetym7nbXFZZBI6LK.jpg' alt='Movistar Plus+' title='Movistar Plus+'/>
 Misión hostil
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.3</span> TMDB</span></div>
@@ -510,7 +502,7 @@ Misión hostil
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/1243341/hdmovielogo/z-o-m-b-i-e-s-4-687650d5b9964.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/vpMcuCCjmRk0ka31dXDSztnD7DC.png' alt='Bloor Street Productions' title='Bloor Street Productions'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/97yvRBw1GzX7fXprcF80er19ot.jpg' alt='Disney Plus' title='Disney Plus'/>
 Zombies 4: Un verano entre vampiros
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.0</span> TMDB</span></div>
@@ -548,7 +540,7 @@ Zombies 4: Un verano entre vampiros
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/tdMbbFhqyEqOK1QzNTvJjHWKbZX.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/xXDT7uk6tDabMZAUUS2s8PJiSUu.png' alt='Kantana Motion Pictures' title='Kantana Motion Pictures'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg' alt='Netflix' title='Netflix'/>
 Ziam
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.745</span> TMDB</span></div>
@@ -586,6 +578,7 @@ Ziam
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/oaocZ3WPKZ7hTgExWH0MGUoTNb5.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/jse4MOi92Jgetym7nbXFZZBI6LK.jpg' alt='Movistar Plus+' title='Movistar Plus+'/>
 Sumario 3/94
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>DOCUMENTAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>N/A</span> TMDB</span></div>
@@ -620,7 +613,6 @@ Sumario 3/94
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/qGqD5YhRGeQzYkD9exKGhSX04KK.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/yVAJJ4TgnV1FsDmLh6h5ZNJd0vf.png' alt='Cinergi Pictures' title='Cinergi Pictures'/></span>
 ¡Arde Hollywood!
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>3.894</span> TMDB</span></div>
@@ -657,7 +649,7 @@ Sumario 3/94
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/483980/hdmovielogo/zombies-5a804a2581956.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/Ar5CT0kDZ0oq2ViGlsWTqZJvila.png' alt='Princessa Productions' title='Princessa Productions'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/97yvRBw1GzX7fXprcF80er19ot.jpg' alt='Disney Plus' title='Disney Plus'/>
 Z-O-M-B-I-E-S
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.265</span> TMDB</span></div>
@@ -694,7 +686,7 @@ Z-O-M-B-I-E-S
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/599521/hdmovielogo/z-o-m-b-i-e-s-2-601acb5702cad.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/vpMcuCCjmRk0ka31dXDSztnD7DC.png' alt='Bloor Street Productions' title='Bloor Street Productions'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/97yvRBw1GzX7fXprcF80er19ot.jpg' alt='Disney Plus' title='Disney Plus'/>
 Z-O-M-B-I-E-S 2
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.495</span> TMDB</span></div>
@@ -730,7 +722,6 @@ Z-O-M-B-I-E-S 2
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/nEuYv9Tihw8pZrZufyhzNE2jRB.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/2G8KkpFzSFsuz7dkM9NbtpoKNEl.png' alt='Inicia Films' title='Inicia Films'/></span>
 Los aitas
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>5.333</span> TMDB</span></div>
@@ -766,7 +757,7 @@ Los aitas
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/e4AyTx37zz9MhJEXKHTDlfseMzT.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/fRqMjLjyAqThtEg9P9WKCXLmCpJ.png' alt='National Geographic' title='National Geographic'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/97yvRBw1GzX7fXprcF80er19ot.jpg' alt='Disney Plus' title='Disney Plus'/>
 Tiburón: la historia definitiva
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>DOCUMENTAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.2</span> TMDB</span></div>
@@ -802,10 +793,10 @@ Tiburón: la historia definitiva
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/kfzZ7oaZrM6O6gc6NVY33Gm4NFW.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/8fLjVGiX8adkseQMCIBYt3UYFiO.png' alt='Impact Partners' title='Impact Partners'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg' alt='Netflix' title='Netflix'/>
 Apocalipsis en los trópicos
 </div>
-<div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>DOCUMENTAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.615</span> TMDB</span></div>
+<div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>DOCUMENTAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.75</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 </div>
@@ -838,10 +829,10 @@ Apocalipsis en los trópicos
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/CQtlo69Ts7oeeyEtSqZZNKQtNE.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/3QFwomSxcZZgMQGBkdUPuJEnSFB.png' alt='RAW' title='RAW'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg' alt='Netflix' title='Netflix'/>
 Fiasco total: El niño del globo
 </div>
-<div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>DOCUMENTAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.8</span> TMDB</span></div>
+<div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>DOCUMENTAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.792</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 </div>
@@ -873,6 +864,7 @@ Fiasco total: El niño del globo
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/aO2D1QDJD7te3mVVLTtW25GqUy6.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg' alt='Netflix' title='Netflix'/>
 Vale la pena, de Dani Rovira
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>10.0</span> TMDB</span></div>
@@ -909,7 +901,7 @@ Vale la pena, de Dani Rovira
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/844/hdmovielogo/2046-64b47f34450cc.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/iVMjKOFyRvm9PW45lW1wW6TSvnj.png' alt='Shanghai Film Group' title='Shanghai Film Group'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/kO2SWXvDCHAquaUuTJBuZkTBAuU.jpg' alt='Filmin' title='Filmin'/>
 2046
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.226</span> TMDB</span></div>
@@ -948,7 +940,6 @@ Vale la pena, de Dani Rovira
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/3110/hdmovielogo/shane-5a6e85bf2c4f2.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/gz66EfNoYPqHTYI4q9UEN4CbHRc.png' alt='Paramount Pictures' title='Paramount Pictures'/></span>
 Raíces profundas
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.4</span> TMDB</span></div>
@@ -987,7 +978,7 @@ Raíces profundas
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/4587/hdmovielogo/mermaids-63b1dd806740b.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/em0rOXVRu3qprWZCx58uDDV2fze.png' alt='Orion Pictures' title='Orion Pictures'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg' alt='MGM Plus Amazon Channel' title='MGM Plus Amazon Channel'/>
 Sirenas
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.7</span> TMDB</span></div>
@@ -1024,7 +1015,6 @@ Sirenas
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/9359/hdmovielogo/maverick-50ce24b043cc9.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/zhD3hhtKB5qyv7ZeL4uLpNxgMVU.png' alt='Warner Bros. Pictures' title='Warner Bros. Pictures'/></span>
 Maverick
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.889</span> TMDB</span></div>
@@ -1061,7 +1051,6 @@ Maverick
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/10861/hdmovielogo/maximum-risk-5e078a4106b21.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/71BqEFAF4V3qjjMPCpLuyJFB9A.png' alt='Columbia Pictures' title='Columbia Pictures'/></span>
 Al límite del riesgo
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>5.784</span> TMDB</span></div>
@@ -1098,7 +1087,7 @@ Al límite del riesgo
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/12149/hdmovielogo/frailty-5443ae0f33a8e.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/cisLn1YAUuptXVBa0xjq7ST9cH0.png' alt='Lionsgate' title='Lionsgate'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/o4OqlMLb3ZjhK7OwR4qvxiZKOXf.jpg' alt='Lionsgate+ Amazon Channels' title='Lionsgate+ Amazon Channels'/>
 Escalofrío
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.974</span> TMDB</span></div>
@@ -1136,7 +1125,7 @@ Escalofrío
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/cGayGCWiMR2upCKADxLmKLBiNUd.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/tWdfCS6OBkxSuXao5lluNKDIvlc.png' alt='CCC Filmkunst' title='CCC Filmkunst'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/ozMgkAAoi6aDI5ce8KKA2k8TGvB.jpg' alt='FlixOlé' title='FlixOlé'/>
 Las vampiras
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>5.7</span> TMDB</span></div>
@@ -1173,6 +1162,7 @@ Las vampiras
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/18477/hdmovielogo/the-hills-have-eyes-part-ii-62bc868d1edf4.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/tGvAD4O9obFP3DfOrDn8NaRQ6eT.jpg' alt='Acontra Plus Amazon Channel' title='Acontra Plus Amazon Channel'/>
 Las colinas tienen ojos 2
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>4.313</span> TMDB</span></div>
@@ -1209,6 +1199,7 @@ Las colinas tienen ojos 2
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/27699/hdmovielogo/the-awful-dr-orlof-5f7da6e4a55ea.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/ozMgkAAoi6aDI5ce8KKA2k8TGvB.jpg' alt='FlixOlé' title='FlixOlé'/>
 Gritos en la noche
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>5.9</span> TMDB</span></div>
@@ -1244,7 +1235,7 @@ Gritos en la noche
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/h6hvy15g67TlFr3fJh3QWtT6vr3.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/aZ5xfV3J3kSShvHxo06ypgE2QBD.png' alt='Tornasol Media' title='Tornasol Media'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/ozMgkAAoi6aDI5ce8KKA2k8TGvB.jpg' alt='FlixOlé' title='FlixOlé'/>
 Inconscientes
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.0</span> TMDB</span></div>
@@ -1280,6 +1271,7 @@ Inconscientes
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/tZ5Oc4GLvoarxTApN3aLrhHYVnh.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/ozMgkAAoi6aDI5ce8KKA2k8TGvB.jpg' alt='FlixOlé' title='FlixOlé'/>
 Bésame monstruo
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>4.4</span> TMDB</span></div>
@@ -1316,7 +1308,6 @@ Bésame monstruo
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/136226/hdmovielogo/smoke-signal-5cdc5cf5a808a.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/vevakirICdmHxRPeZUdbjFqcFLM.png' alt='Universal International Pictures' title='Universal International Pictures'/></span>
 Cara a la muerte
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.5</span> TMDB</span></div>
@@ -1353,7 +1344,7 @@ Cara a la muerte
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/157336/hdmovielogo/interstellar-541dd6756e663.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/5UQsZrfbfG2dYJbx8DxfoTr2Bvu.png' alt='Legendary Pictures' title='Legendary Pictures'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg' alt='Netflix' title='Netflix'/>
 Interstellar
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.5</span> TMDB</span></div>
@@ -1392,6 +1383,7 @@ Interstellar
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/sTBSeRz3UKFdumztzDtKi4hmxMJ.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/jse4MOi92Jgetym7nbXFZZBI6LK.jpg' alt='Movistar Plus+' title='Movistar Plus+'/>
 Esquilache
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>4.9</span> TMDB</span></div>
@@ -1428,6 +1420,7 @@ Esquilache
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/189326/hdmovielogo/el-baile-del-pato-5c15334abf1d3.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/ozMgkAAoi6aDI5ce8KKA2k8TGvB.jpg' alt='FlixOlé' title='FlixOlé'/>
 El baile del pato
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>5.0</span> TMDB</span></div>
@@ -1464,7 +1457,6 @@ El baile del pato
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/208162/hdmovielogo/joe-dakota-65d4ce94889e9.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/vevakirICdmHxRPeZUdbjFqcFLM.png' alt='Universal International Pictures' title='Universal International Pictures'/></span>
 Sediento de justicia
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>5.6</span> TMDB</span></div>
@@ -1501,7 +1493,7 @@ Sediento de justicia
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/856289/hdmovielogo/creation-of-the-gods-i-kingdom-of-storms-6649f0210049e.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/hwoojywsskxB91jw2QwgLeTwMr.png' alt='Beijing Culture' title='Beijing Culture'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/kO2SWXvDCHAquaUuTJBuZkTBAuU.jpg' alt='Filmin' title='Filmin'/>
 La creación de los dioses: El reino de las tormentas
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.1</span> TMDB</span></div>
@@ -1539,7 +1531,7 @@ La creación de los dioses: El reino de las tormentas
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/v5h8xiCJ1cI7nhGZmt1jZwHQCii.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/eLqEwxftRksydIt1F5h5BdqjMq0.png' alt='Top Hat Productions' title='Top Hat Productions'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/2ino0WmHA4GROB7NYKzT6PGqLcb.jpg' alt='AMC+ Amazon Channel' title='AMC+ Amazon Channel'/>
 Mira para otro lado
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>DOCUMENTAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>N/A</span> TMDB</span></div>
@@ -1572,6 +1564,7 @@ Mira para otro lado
 </div>
 <div class='novedad'>
 <div class="titulo-pelicula">
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/pvske1MyAoymrs5bguRfVqYiM9a.jpg' alt='Amazon Prime Video' title='Amazon Prime Video'/>
 Gora Automatikoa
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>DIBUJO</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.071</span> TMDB</span></div>
@@ -1642,7 +1635,6 @@ Influencer
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/1249213/hdmovielogo/drop-67963ce022f7f.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/rzKluDcRkIwHZK2pHsiT667A2Kw.png' alt='Blumhouse Productions' title='Blumhouse Productions'/></span>
 La cita
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.466</span> TMDB</span></div>
@@ -1682,7 +1674,6 @@ La cita
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/2687/hdmovielogo/memoirs-of-an-invisible-man-513dceea76379.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/zhD3hhtKB5qyv7ZeL4uLpNxgMVU.png' alt='Warner Bros. Pictures' title='Warner Bros. Pictures'/></span>
 Memorias de un hombre invisible
 </div>
 <div class='badge-row'><span class='badge-type'>PELÍCULA</span><span class='categoria-badge'>PELÍCULA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>5.896</span> TMDB</span></div>
@@ -1754,7 +1745,7 @@ Un año y un día
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/oz5zbMBKCUsb7hsbjdxvK8yagPD.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/ayE4LIqoAWotavo7xdvYngwqGML.png' alt='Toei Animation' title='Toei Animation'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg' alt='Netflix' title='Netflix'/>
 Dragon Ball Z Kai
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>ANIME</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.5</span> TMDB</span></div>
@@ -1789,10 +1780,10 @@ Dragon Ball Z Kai
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/4pxGvtwxDlATy9nvJMvYL8u25LZ.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/d6HwljzlOzxJ4tXlrpRkNZaZMWL.png' alt='Amazon MGM Studios' title='Amazon MGM Studios'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/pvske1MyAoymrs5bguRfVqYiM9a.jpg' alt='Amazon Prime Video' title='Amazon Prime Video'/>
 La cuenta atrás
 </div>
-<div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>GENERAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.274</span> TMDB</span></div>
+<div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>GENERAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.198</span> TMDB</span></div>
 <div class='badges-calidad'>
 <span class='badge-calidad'>1080p</span>
 </div>
@@ -1824,7 +1815,7 @@ La cuenta atrás
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/bx26v6trU13B2VfzSMfpMJe7OGb.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/wZQuQgwxXwsACeUKUWNtQ6IcdyP.png' alt='AMPLE Entertainment' title='AMPLE Entertainment'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg' alt='Netflix' title='Netflix'/>
 La desaparición de Amy Bradley
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>DOCUMENTAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>10.0</span> TMDB</span></div>
@@ -1858,7 +1849,6 @@ La desaparición de Amy Bradley
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/3IxznCOIYjajctSJ6BtlkDfJ22Y.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/tHzHPSKdmLT5zCdqFbcmHzZvRIc.png' alt='J.C.STAFF' title='J.C.STAFF'/></span>
 Toradora!
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>ANIME</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.218</span> TMDB</span></div>
@@ -1893,7 +1883,7 @@ Toradora!
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/iAnNhCoBKUXWoTxgmGYrv2Qc8Dm.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/849Lsv7KuvPNz5nEb6eqKVX3U8u.png' alt='The Forge Entertainment' title='The Forge Entertainment'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/2E03IAZsX4ZaUqM7tXlctEPMGWS.jpg' alt='Apple TV+' title='Apple TV+'/>
 The Buccaneers: Aristócratas por amor
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>GENERAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.1</span> TMDB</span></div>
@@ -1930,7 +1920,7 @@ The Buccaneers: Aristócratas por amor
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/eXxgT33OitzfmYol1kbTy7TKNOR.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/g96SufLc3lXtaU73tAvEbTbXymY.png' alt='TRIGGER' title='TRIGGER'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/pvske1MyAoymrs5bguRfVqYiM9a.jpg' alt='Amazon Prime Video' title='Amazon Prime Video'/>
 New PANTY & STOCKING with GARTERBELT
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>ANIME</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>10.0</span> TMDB</span></div>
@@ -1966,7 +1956,7 @@ New PANTY & STOCKING with GARTERBELT
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/tv/248830/hdtvlogo/the-playboy-club-5437a6feba4f6.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/6WLvW3VlxfXOPukpeEPYnjdFtwH.png' alt='Propagate Content' title='Propagate Content'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/2E03IAZsX4ZaUqM7tXlctEPMGWS.jpg' alt='Apple TV+' title='Apple TV+'/>
 Sticks: Cracks del golf
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>GENERAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.103</span> TMDB</span></div>
@@ -2001,7 +1991,7 @@ Sticks: Cracks del golf
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/kVZcEY6PCeweU4GFWBOnlKAM28L.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/4Rw2mRqA8JOf8qec6pVF57U65me.png' alt='Doga Kobo' title='Doga Kobo'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg' alt='Crunchyroll' title='Crunchyroll'/>
 The Shiunji Family Children
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>ANIME</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.385</span> TMDB</span></div>
@@ -2033,7 +2023,7 @@ The Shiunji Family Children
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/7EDiFma8CrnbT9F05xNd50CZZrr.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/ua3hvrsryhmCGFFWJu9sEBXj92b.png' alt='Sanzigen' title='Sanzigen'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg' alt='Crunchyroll' title='Crunchyroll'/>
 GUILTY GEAR STRIVE: DUAL RULERS
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>ANIME</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.5</span> TMDB</span></div>
@@ -2068,7 +2058,6 @@ GUILTY GEAR STRIVE: DUAL RULERS
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/lL0rMeVqiOyVwmft6oPKQKbDYr6.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/8xKcaZSIRdsR616LQ7nMptjkUvg.png' alt='P.A.WORKS' title='P.A.WORKS'/></span>
 Another
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>ANIME</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.358</span> TMDB</span></div>
@@ -2103,7 +2092,7 @@ Another
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/pJqAgDico7ZTMAfAXyzldYqj5ME.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/9rjW9KehnPKHh9CNu7s8IbQXRN5.png' alt='Zero-G' title='Zero-G'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg' alt='Crunchyroll' title='Crunchyroll'/>
 Grand Blue
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>ANIME</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.694</span> TMDB</span></div>
@@ -2135,7 +2124,7 @@ Grand Blue
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/de6iC707SwuMsE3y2fo5OHCOsvj.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/Lf0udeB7OwHoFJ0XIxVwfyGOqE.png' alt='Kinema Citrus' title='Kinema Citrus'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg' alt='Netflix' title='Netflix'/>
 The Rising of the Shield Hero
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>ANIME</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.521</span> TMDB</span></div>
@@ -2170,7 +2159,7 @@ The Rising of the Shield Hero
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/zDXuwmqkTi2lGM4AyloAAX4v51P.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/aPH68PzQDtz7QorAU369IlxwgnU.png' alt='David Production' title='David Production'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg' alt='Crunchyroll' title='Crunchyroll'/>
 Fire Force
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>ANIME</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.372</span> TMDB</span></div>
@@ -2206,7 +2195,7 @@ Fire Force
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/tv/272556/hdtvlogo/tenkai-knights-5c803dd77dd9c.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/8xKcaZSIRdsR616LQ7nMptjkUvg.png' alt='P.A.WORKS' title='P.A.WORKS'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg' alt='Crunchyroll' title='Crunchyroll'/>
 Dealing with Mikadono Sisters Is a Breeze
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>ANIME</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.5</span> TMDB</span></div>
@@ -2238,7 +2227,7 @@ Dealing with Mikadono Sisters Is a Breeze
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/lPpKeKWD0dfHB8ZakfEavurVZ1T.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/5sKwEOp3RdoAukp6qHwSE8MoTit.png' alt='SynergySP' title='SynergySP'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg' alt='Crunchyroll' title='Crunchyroll'/>
 Solo Camping for Two
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>ANIME</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.5</span> TMDB</span></div>
@@ -2270,7 +2259,7 @@ Solo Camping for Two
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/mbQi8FC2Gk762plIcZfYCE2Kcmj.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/h5qMfjH9jaJ5835UGdq2PZQ1a33.png' alt='Take 5 Productions' title='Take 5 Productions'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg' alt='Movistar Plus+ Ficción Total ' title='Movistar Plus+ Ficción Total '/>
 Los Borgia
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>GENERAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.556</span> TMDB</span></div>
@@ -2305,7 +2294,7 @@ Los Borgia
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/hFFAYkK8XkvIlQss9GYxo8TOhFi.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/Aq2pCS1mXg4AiVwLTkh4bhcejmt.png' alt='101 Studios' title='101 Studios'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg' alt='Netflix' title='Netflix'/>
 Yellowstone
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>GENERAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.256</span> TMDB</span></div>
@@ -2341,7 +2330,7 @@ Yellowstone
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/z8CzVVAGHRRmgJQ6ZRjr8OuCmlj.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/zC3b70ixHh89qJIikLQPEvLqbPM.png' alt='Davis Entertainment' title='Davis Entertainment'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/jse4MOi92Jgetym7nbXFZZBI6LK.jpg' alt='Movistar Plus+' title='Movistar Plus+'/>
 The Equalizer
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>GENERAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.361</span> TMDB</span></div>
@@ -2376,7 +2365,7 @@ The Equalizer
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/c17wJXhZqMD2sGLJE5kTTD6XTj3.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/pkrdO9ykplO4Zc8edikoSX5APUN.png' alt='TVE' title='TVE'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/pvske1MyAoymrs5bguRfVqYiM9a.jpg' alt='Amazon Prime Video' title='Amazon Prime Video'/>
 El Lute: La Serie
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>GENERAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>N/A</span> TMDB</span></div>
@@ -2411,7 +2400,7 @@ El Lute: La Serie
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/8NX2kBLHS6vSrl8Lg3Y2JAqzmy9.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/oE7H93u8sy5vvW5EH3fpCp68vvB.png' alt='Apple Studios' title='Apple Studios'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/2E03IAZsX4ZaUqM7tXlctEPMGWS.jpg' alt='Apple TV+' title='Apple TV+'/>
 Vicios ocultos
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>GENERAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.3</span> TMDB</span></div>
@@ -2448,7 +2437,7 @@ Vicios ocultos
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/uVnGusAwehV4WdxgKwFg0UJql1R.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/8rFlu5iytnjsciYXZDw90ktllCI.png' alt='20th Television' title='20th Television'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/97yvRBw1GzX7fXprcF80er19ot.jpg' alt='Disney Plus' title='Disney Plus'/>
 Tracker
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>GENERAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.5</span> TMDB</span></div>
@@ -2483,7 +2472,7 @@ Tracker
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/svdtJsa1ZhZ31zcc5XGEMbbI52j.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/uvA6e2O31qaonsbYd8tjvgqmNXh.png' alt='Phantom Four' title='Phantom Four'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/2E03IAZsX4ZaUqM7tXlctEPMGWS.jpg' alt='Apple TV+' title='Apple TV+'/>
 Matabot
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>GENERAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.5</span> TMDB</span></div>
@@ -2520,7 +2509,7 @@ Matabot
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/tQqbbxBAdW2ql8vbOqMOJbtSQ7O.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/inqnY5MWKZ2HnFR9xOUvfP7fwqk.png' alt='MTV Entertainment Studios' title='MTV Entertainment Studios'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg' alt='Movistar Plus+ Ficción Total ' title='Movistar Plus+ Ficción Total '/>
 Tierra de mafiosos
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>GENERAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.445</span> TMDB</span></div>
@@ -2556,7 +2545,6 @@ Tierra de mafiosos
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/mbSSCIbNpeyNJqKAKkWgdvYsQ8F.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/bh3pBLmTPkgrD41WqFzJ2hQgvaF.png' alt='Bambú Producciones' title='Bambú Producciones'/></span>
 La promesa
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>NOVELA</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.649</span> TMDB</span></div>
@@ -2591,7 +2579,6 @@ La promesa
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/m3TefIJ6pe8QNH2s4tHAtJjd1IN.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/jXI0xZEJabWaYtfqWxXyKuJJxzX.png' alt='3Cat' title='3Cat'/></span>
 Delta
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>GENERAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>6.0</span> TMDB</span></div>
@@ -2626,7 +2613,7 @@ Delta
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/o0NsbcIvsllg6CJX0FBFY8wWbsn.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/wTPPnz05ZCQgEQVeSOxTkUCyhr5.png' alt='Pierrot' title='Pierrot'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/97yvRBw1GzX7fXprcF80er19ot.jpg' alt='Disney Plus' title='Disney Plus'/>
 Bleach
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>ANIME</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.371</span> TMDB</span></div>
@@ -2662,7 +2649,7 @@ Bleach
 <img class='clearlogo' src='https://assets.fanart.tv/fanart/tv/81723/hdtvlogo/tekkaman-blade-5e141a365620d.png' alt='Clearlogo'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/jeTxdjXhzgKZyLr3l9MllkTn3fy.png' alt='Universal Television' title='Universal Television'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg' alt='Movistar Plus+ Ficción Total ' title='Movistar Plus+ Ficción Total '/>
 La edad dorada
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>GENERAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.783</span> TMDB</span></div>
@@ -2697,7 +2684,7 @@ La edad dorada
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/3siv3RaQrdr2tQiv9jHq71sLlzo.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/n3pI0U0pXZjESr0WlLeqZxZnxp0.png' alt='5&2 Studios' title='5&2 Studios'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/pvske1MyAoymrs5bguRfVqYiM9a.jpg' alt='Amazon Prime Video' title='Amazon Prime Video'/>
 The Chosen (Los elegidos)
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>GENERAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.7</span> TMDB</span></div>
@@ -2732,7 +2719,7 @@ The Chosen (Los elegidos)
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/hYwZR2P8MNJZz2Dnj68M8bUOfLt.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/q7SpPvg2sJGRMZ5X4ba123eU4Qf.png' alt='SLL' title='SLL'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/pvske1MyAoymrs5bguRfVqYiM9a.jpg' alt='Amazon Prime Video' title='Amazon Prime Video'/>
 Un chico ejemplar
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>GENERAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.7</span> TMDB</span></div>
@@ -2767,7 +2754,7 @@ Un chico ejemplar
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/mcU5nwUqPJB6GeElDhKA68LKhqD.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/1ZjUvqLGbp5vUcY235LAvQyI6N3.png' alt='MGM+ Studios' title='MGM+ Studios'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/efu1Cqc63XrPBoreYnf2mn0Nizj.jpg' alt='MGM Plus Amazon Channel' title='MGM Plus Amazon Channel'/>
 El Instituto
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>GENERAL</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>8.375</span> TMDB</span></div>
@@ -2802,7 +2789,7 @@ El Instituto
 <img class='fanart' src='https://image.tmdb.org/t/p/w780/4uWvmON2pqDJtpPAsHMggdDFFrn.jpg' alt='Fanart'>
 </div>
 <div class="titulo-pelicula">
-<span class='estudio-logo-bg'><img class='estudio-logo' src='https://image.tmdb.org/t/p/w92/8Lqf0okunSPAwBBL08Ua1IRe1xi.png' alt='Wolf Entertainment' title='Wolf Entertainment'/></span>
+<img class='plataforma-logo' src='https://image.tmdb.org/t/p/w92/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg' alt='Movistar Plus+ Ficción Total ' title='Movistar Plus+ Ficción Total '/>
 Ley y orden
 </div>
 <div class='badge-row'><span class='badge-type serie'>SERIE</span><span class='categoria-badge'>RETRO</span><span class='rating-block'><svg class='icon-estrella' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><polygon points='12,2 15,9 23,9.5 17,15 19,22 12,18 5,22 7,15 1,9.5 9,9' /></svg><span>7.4</span> TMDB</span></div>
