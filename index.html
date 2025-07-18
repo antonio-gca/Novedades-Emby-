@@ -1,787 +1,914 @@
 
 <!DOCTYPE html>
 <html lang='es'><head>
-<meta charset='UTF-8'>
-<title>Historial de Novedades Emby</title>
+<meta charset='UTF-8'><title>Historial de Novedades Emby</title>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <style>
-/* ...tu CSS aquí (idéntico que ya tienes)... */
-</style>
-</head><body>
-<h1>Historial de Novedades</h1>
-<div class='fecha'>Última actualización: 18/07/2025 11:06</div>
 
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #191a1e;
+    color: #ededed;
+    margin: 0;
+    padding: 30px;
+}
+h1 {
+    font-size: 2.1em;
+    font-weight: bold;
+    color: #ededed;
+    letter-spacing: 0.01em;
+    background: none;
+    border-bottom: 2px solid #303031;
+    padding-bottom: 10px;
+    margin-bottom: 22px;
+}
+h2, h3 {
+    color: #ededed;
+    font-weight: 500;
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+}
+.fecha {
+    color: #b9b9b9;
+    font-size: 15px;
+    margin-bottom: 17px;
+}
+.novedad {
+    margin-bottom: 30px;
+    background: #222326;
+    border-radius: 10px;
+    box-shadow: 0 3px 22px #191a1f61;
+    padding: 22px 20px 10px 20px;
+    border: 1.3px solid #232427;
+}
+.fanart-box { position: relative; }
+.fanart {
+    width: 100%; max-height: 230px; object-fit:cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 0px 24px #0b0b0f7c;
+}
+.clearlogo {
+    position: absolute;
+    right: 12px; top: 15px;
+    width: 28%; min-width:65px; max-width:110px; height:auto;
+    pointer-events:none;
+    filter: drop-shadow(0 1px 8px #232d3199);
+    opacity: 0.94;
+    z-index: 4;
+}
+ul { margin-top: 2px; padding-left: 18px;}
+.badge, .categoria-badge {
+    background: #292b2e;
+    color: #ededed;
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: 13px;
+    margin-left: 7px;
+    display: inline-block;
+}
+.badges-calidad {
+    margin-bottom: 11px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.badge-4k { background: #f5b11e; color: #222;}
+.badge-dv { background:#35ecb1; color:#111;}
+.badge-hdr10 { background:#3297ff; color:#fff;}
+.badge-1080p { background:#364048; color:#fff;}
+.emby-btn, .trailer-btn {
+    background: #242528;
+    color: #fff;
+    border-radius: 7px;
+    margin-top: 11px;
+    margin-right: 8px;
+    padding: 10px 20px 10px 16px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: .01em;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 2px 10px #23232518;
+    transition: background .22s;
+}
+.emby-btn:hover, .trailer-btn:hover {
+    background: #393a3e;
+}
+.emby-logo, .yt-logo {
+    height: 22px; width: 22px; margin-right: 8px; vertical-align: middle;
+}
+.nota-app {
+    margin-top: 13px;
+    font-size: 13px;
+    color: #b9b9b9;
+    letter-spacing:0.01em;
+}
+#darkmode-toggle {
+    position:fixed; top:14px; right:17px; z-index:100;
+    background:#292929; color:#ededed; border:none;
+    padding:8px 15px; border-radius:8px; cursor:pointer; font-weight:bold;
+}
+@media (max-width: 700px) {
+    body {padding:6px;}
+    .novedad {padding:9px 3px 7px 6px; max-width:100vw;}
+}
+</style>
+
+</style>
+<script>
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', '1');
+    } else {
+        localStorage.removeItem('darkMode');
+    }
+}
+window.onload = function() {
+    if (localStorage.getItem('darkMode') === '1') {
+        document.body.classList.add('dark-mode');
+    }
+}
+</script>
+</head><body>
+
+<button id='darkmode-toggle' onclick='toggleDarkMode()'>🌘 Alternar modo</button>
+<h1>Historial de Novedades</h1>
+<div class='fecha'>Última actualización: 18/07/2025 11:09</div>
 <h2>Películas nuevas</h2>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/AqLFZK2nykm6oURXFRHjOaAssqn.jpg" alt="Fanart">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/AqLFZK2nykm6oURXFRHjOaAssqn.jpg' alt='Fanart'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>7.4</span></span>
-<span class="badge-year">2023</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-quality">1080p</span>
-<span class="badge-genre">Historia</span>
+<h3>Dovbush <span class='badge'>Película</span>
+<span class='categoria-badge'>Película</span>
+</h3>
+<div class='badges-calidad'>
+<span class='badge-1080p'>1080p</span>
 </div>
-<h3>Dovbush <span class="btn-categoria pelicula">Película</span></h3>
 <ul>
+<li><b>Año:</b> 2023</li>
 <li><b>Sinopsis:</b> Basada en la épica historia real de Dovbush, el famoso forajido ucraniano que lideró una revuelta del pueblo convirtiéndose en una leyenda y cambiando la historia del país. Siglo XVIII. El brutal dominio de la nobleza polaca obliga al pueblo a huir a las montañas de los Cárpatos, donde iniciarán una rebelión liderada por Dovbush, mientras la nobleza hace lo imposible por acabar con él.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/movie/815029" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Historia, Drama</li>
+<li><b>Rating TMDB:</b> 7.4</li>
+<li><b>Duración:</b> 120 minutos</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/movie/815029' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=815029" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=Dovbush+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=815029' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Dovbush+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/cU9HXBinAA0Q67pWlsj0kpKfsG3.jpg" alt="Fanart">
-<img class="clearlogo-center" src="https://assets.fanart.tv/fanart/movies/477776/hdmovielogo/code-geass-lelouch-of-the-rebellion---awakening-5cf4f1c78feb6.png" alt="Clearlogo">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/cU9HXBinAA0Q67pWlsj0kpKfsG3.jpg' alt='Fanart'>
+<img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/477776/hdmovielogo/code-geass-lelouch-of-the-rebellion---awakening-5cf4f1c78feb6.png' alt='Logo'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>7.1</span></span>
-<span class="badge-year">2017</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-genre">Ciencia ficción</span>
-</div>
-<h3>Code Geass: Lelouch of the Rebellion I — Initiation <span class="btn-categoria pelicula">Película</span></h3>
+<h3>Code Geass: Lelouch of the Rebellion I — Initiation <span class='badge'>Película</span>
+<span class='categoria-badge'>Anime</span>
+</h3>
 <ul>
+<li><b>Año:</b> 2017</li>
 <li><b>Sinopsis:</b> </li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/movie/477776" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Ciencia ficción, Animación, Drama, Acción</li>
+<li><b>Rating TMDB:</b> 7.1</li>
+<li><b>Duración:</b> 135 minutos</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/movie/477776' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=477776" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=Code+Geass:+Lelouch+of+the+Rebellion+I+—+Initiation+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=477776' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Code+Geass:+Lelouch+of+the+Rebellion+I+—+Initiation+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/dQeXRjxH7Onfy8n0WCPD7bKHIo8.jpg" alt="Fanart">
-<img class="clearlogo-center" src="https://assets.fanart.tv/fanart/movies/13105/hdmovielogo/mr-mom-5745f40c54040.png" alt="Clearlogo">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/dQeXRjxH7Onfy8n0WCPD7bKHIo8.jpg' alt='Fanart'>
+<img class='clearlogo' src='https://assets.fanart.tv/fanart/movies/13105/hdmovielogo/mr-mom-5745f40c54040.png' alt='Logo'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>6.6</span></span>
-<span class="badge-year">1983</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-quality">1080p</span>
-<span class="badge-genre">Comedia</span>
+<h3>Las locas peripecias de un Sr. mamá <span class='badge'>Película</span>
+<span class='categoria-badge'>Película</span>
+</h3>
+<div class='badges-calidad'>
+<span class='badge-1080p'>1080p</span>
 </div>
-<h3>Las locas peripecias de un Sr. mamá <span class="btn-categoria pelicula">Película</span></h3>
 <ul>
+<li><b>Año:</b> 1983</li>
 <li><b>Sinopsis:</b> Cuando Jack se queda sin trabajo, él y su mujer Caroline deciden que hasta que encuentre otro se encargue de las labores domésticas y de los niños. Lo malo es que Jack no tiene la menor idea de cómo hacerlo, y convertirá todo en un desastre.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/movie/13105" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Comedia, Drama</li>
+<li><b>Rating TMDB:</b> 6.6</li>
+<li><b>Duración:</b> 91 minutos</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/movie/13105' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=13105" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=Las+locas+peripecias+de+un+Sr.+mamá+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=13105' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Las+locas+peripecias+de+un+Sr.+mamá+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/zI9KXvQEkku5cmcwKnubOY5JfhJ.jpg" alt="Fanart">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/zI9KXvQEkku5cmcwKnubOY5JfhJ.jpg' alt='Fanart'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>6.0</span></span>
-<span class="badge-year">1967</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-quality">1080p</span>
-<span class="badge-genre">Acción</span>
+<h3>Camino De Oregón <span class='badge'>Película</span>
+<span class='categoria-badge'>Película</span>
+</h3>
+<div class='badges-calidad'>
+<span class='badge-1080p'>1080p</span>
 </div>
-<h3>Camino De Oregón <span class="btn-categoria pelicula">Película</span></h3>
 <ul>
+<li><b>Año:</b> 1967</li>
 <li><b>Sinopsis:</b> Missouri, 1843. El senador William J. Tadlock busca voluntarios que lo acompañen hasta Oregón. Será un viaje largo y lleno de penalidades, que exige atravesar territorio indio. Entre los primeros que se unen a la caravana está la familia de Lije Evans, un granjero sediento de aventuras, los recién casados Johnnie y Amada Mack y varios comerciantes de Independence.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/movie/42703" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Acción, Aventura, Drama, Western</li>
+<li><b>Rating TMDB:</b> 6.016</li>
+<li><b>Duración:</b> 122 minutos</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/movie/42703' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=42703" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=Camino+De+Oregón+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=42703' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Camino+De+Oregón+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>0.0</span></span>
-<span class="badge-year">2019</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-quality">1080p</span>
-<span class="badge-genre">Documental</span>
+<h3>Nuestro Universo Infinito <span class='badge'>Película</span>
+<span class='categoria-badge'>Documental</span>
+</h3>
+<div class='badges-calidad'>
+<span class='badge-1080p'>1080p</span>
 </div>
-<h3>Nuestro Universo Infinito <span class="btn-categoria pelicula">Película</span></h3>
 <ul>
+<li><b>Año:</b> 2019</li>
 <li><b>Sinopsis:</b> Buscamos respuesta a una de las cuestiones más importantes de nuestro tiempo: ¿Existe el infinito? Si es así, ¿cuáles son las implicaciones de un universo infinito?</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/movie/1341735" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Documental</li>
+<li><b>Rating TMDB:</b> 0.0</li>
+<li><b>Duración:</b> 43 minutos</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/movie/1341735' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=1341735" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=Nuestro+Universo+Infinito+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=1341735' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Nuestro+Universo+Infinito+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <h2>Series nuevas</h2>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/oz5zbMBKCUsb7hsbjdxvK8yagPD.jpg" alt="Fanart">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/oz5zbMBKCUsb7hsbjdxvK8yagPD.jpg' alt='Fanart'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>7.5</span></span>
-<span class="badge-year">2009</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-quality">1080p</span>
-<span class="badge-genre">Sci-Fi & Fantasy</span>
+<h3>Dragon Ball Z Kai <span class='badge'>Serie</span>
+<span class='categoria-badge'>Anime</span>
+</h3>
+<div class='badges-calidad'>
+<span class='badge-1080p'>1080p</span>
 </div>
-<h3>Dragon Ball Z Kai <span class="btn-categoria serie">Serie</span></h3>
 <ul>
+<li><b>Año:</b> 2009</li>
 <li><b>Sinopsis:</b> Una antigua leyenda dice: «Reúne las Siete Bolas de Dragón y Shenron el Dragón aparecerá para hacer realidad un deseo». Con semejante poder, las Bolas de Dragón son muy codiciadas, especialmente por los más malvados villanos. Pero con la ayuda de sus amigos y familiares, Son Goku está dispuesto a luchar contra sus enemigos para proteger a sus amigos, a su familia y salvar el Mundo.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/tv/61709" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Sci-Fi & Fantasy, Animación, Action & Adventure, Comedia</li>
+<li><b>Rating TMDB:</b> 7.5</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/61709' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=61709" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=Dragon+Ball+Z+Kai+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=61709' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Dragon+Ball+Z+Kai+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/4pxGvtwxDlATy9nvJMvYL8u25LZ.jpg" alt="Fanart">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/4pxGvtwxDlATy9nvJMvYL8u25LZ.jpg' alt='Fanart'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>7.3</span></span>
-<span class="badge-year">2025</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-quality">1080p</span>
-<span class="badge-genre">Drama</span>
+<h3>La cuenta atrás <span class='badge'>Serie</span>
+<span class='categoria-badge'>General</span>
+</h3>
+<div class='badges-calidad'>
+<span class='badge-1080p'>1080p</span>
 </div>
-<h3>La cuenta atrás <span class="btn-categoria serie">Serie</span></h3>
 <ul>
+<li><b>Año:</b> 2025</li>
 <li><b>Sinopsis:</b> Tras el homicidio de un oficial de Seguridad Nacional a plena luz del día, reclutan a Mark Meachum, un detective de Los Ángeles, para investigar en una fuerza especial con agentes encubiertos de cada rama de las fuerzas del orden. Pero la búsqueda del asesino revela una historia aún más siniestra de lo imaginable e inicia la carrera contra el tiempo para salvar una ciudad en la que viven millones.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/tv/256317" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Drama, Crimen, Misterio</li>
+<li><b>Rating TMDB:</b> 7.274</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/256317' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=256317" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=La+cuenta+atrás+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=256317' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=La+cuenta+atrás+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/bx26v6trU13B2VfzSMfpMJe7OGb.jpg" alt="Fanart">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/bx26v6trU13B2VfzSMfpMJe7OGb.jpg' alt='Fanart'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>10.0</span></span>
-<span class="badge-year">2025</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-quality">1080p</span>
-<span class="badge-genre">Documental</span>
+<h3>La desaparición de Amy Bradley <span class='badge'>Serie</span>
+<span class='categoria-badge'>Documental</span>
+</h3>
+<div class='badges-calidad'>
+<span class='badge-1080p'>1080p</span>
 </div>
-<h3>La desaparición de Amy Bradley <span class="btn-categoria serie">Serie</span></h3>
 <ul>
+<li><b>Año:</b> 2025</li>
 <li><b>Sinopsis:</b> Miniserie de TV. 3 episodios. Investiga la desaparición en 1998 de la joven de 23 años Amy Bradley en un crucero por el Caribe, así como la incansable lucha de su familia por descubrir qué pasó.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/tv/294726" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Documental, Crimen</li>
+<li><b>Rating TMDB:</b> 10.0</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/294726' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=294726" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=La+desaparición+de+Amy+Bradley+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=294726' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=La+desaparición+de+Amy+Bradley+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/3IxznCOIYjajctSJ6BtlkDfJ22Y.jpg" alt="Fanart">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/3IxznCOIYjajctSJ6BtlkDfJ22Y.jpg' alt='Fanart'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>8.2</span></span>
-<span class="badge-year">2008</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-quality">1080p</span>
-<span class="badge-genre">Animación</span>
+<h3>Toradora! <span class='badge'>Serie</span>
+<span class='categoria-badge'>Anime</span>
+</h3>
+<div class='badges-calidad'>
+<span class='badge-1080p'>1080p</span>
 </div>
-<h3>Toradora! <span class="btn-categoria serie">Serie</span></h3>
 <ul>
+<li><b>Año:</b> 2008</li>
 <li><b>Sinopsis:</b> Ryuuji Takasu, un estudiante amable con rostro intimidante, y Taiga Aisaka, una pequeña pero feroz chica conocida como el "Tigre de bolsillo", terminan cruzando caminos por un error. Descubren que ambos tienen amores no correspondidos y forman una alianza para ayudarse mutuamente, desencadenando una divertida y emotiva comedia romántica.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/tv/42916" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Animación, Comedia, Drama</li>
+<li><b>Rating TMDB:</b> 8.218</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/42916' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=42916" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=Toradora!+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=42916' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Toradora!+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/iAnNhCoBKUXWoTxgmGYrv2Qc8Dm.jpg" alt="Fanart">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/iAnNhCoBKUXWoTxgmGYrv2Qc8Dm.jpg' alt='Fanart'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>7.1</span></span>
-<span class="badge-year">2023</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-quality">1080p</span>
-<span class="badge-genre">Drama</span>
+<h3>The Buccaneers: Aristócratas por amor <span class='badge'>Serie</span>
+<span class='categoria-badge'>General</span>
+</h3>
+<div class='badges-calidad'>
+<span class='badge-1080p'>1080p</span>
+<span class='badge-dv'>DV</span>
+<span class='badge-hdr10'>HDR10+</span>
 </div>
-<h3>The Buccaneers: Aristócratas por amor <span class="btn-categoria serie">Serie</span></h3>
 <ul>
+<li><b>Año:</b> 2023</li>
 <li><b>Sinopsis:</b> Un grupo de chicas estadounidenses marchosas irrumpen en la escena del encorsetado Londres de 1870, lo que da lugar a un choque cultural angloamericano. Enviadas a hacerse con maridos y estatus, los corazones de las chicas buscan mucho más que eso.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/tv/213338" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Drama</li>
+<li><b>Rating TMDB:</b> 7.1</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/213338' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=213338" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=The+Buccaneers:+Aristócratas+por+amor+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=213338' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=The+Buccaneers:+Aristócratas+por+amor+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/eXxgT33OitzfmYol1kbTy7TKNOR.jpg" alt="Fanart">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/eXxgT33OitzfmYol1kbTy7TKNOR.jpg' alt='Fanart'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>10.0</span></span>
-<span class="badge-year">2025</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-quality">1080p</span>
-<span class="badge-genre">Animación</span>
+<h3>New PANTY & STOCKING with GARTERBELT <span class='badge'>Serie</span>
+<span class='categoria-badge'>Anime</span>
+</h3>
+<div class='badges-calidad'>
+<span class='badge-1080p'>1080p</span>
 </div>
-<h3>New PANTY & STOCKING with GARTERBELT <span class="btn-categoria serie">Serie</span></h3>
 <ul>
+<li><b>Año:</b> 2025</li>
 <li><b>Sinopsis:</b> En Daten City, una plaga de espíritus malignos se alimenta de los anhelos y el rencor humanos cuando dos seres misteriosos surgen para darles caza con su luz divina: Panty y Stocking.Las hermanas ángeles caídas deberán purgar la oscuridad que asola la Tierra, pero ¿quiénes son en realidad? ¿Mensajeras de Dios o secuaces del Diablo? Una cosa está clara: luchan contra fuerzas sobrenaturales.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/tv/246862" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Animación, Comedia, Action & Adventure, Sci-Fi & Fantasy</li>
+<li><b>Rating TMDB:</b> 10.0</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/246862' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=246862" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=New+PANTY+&+STOCKING+with+GARTERBELT+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=246862' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=New+PANTY+&+STOCKING+with+GARTERBELT+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/lqaT9mIxcVJs9QSUf0hdy0zW68C.jpg" alt="Fanart">
-<img class="clearlogo-center" src="https://assets.fanart.tv/fanart/tv/248830/hdtvlogo/the-playboy-club-5437a6feba4f6.png" alt="Clearlogo">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/lqaT9mIxcVJs9QSUf0hdy0zW68C.jpg' alt='Fanart'>
+<img class='clearlogo' src='https://assets.fanart.tv/fanart/tv/248830/hdtvlogo/the-playboy-club-5437a6feba4f6.png' alt='Logo'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>7.1</span></span>
-<span class="badge-year">2025</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-quality">1080p</span>
-<span class="badge-genre">Comedia</span>
+<h3>Sticks: Cracks del golf <span class='badge'>Serie</span>
+<span class='categoria-badge'>General</span>
+</h3>
+<div class='badges-calidad'>
+<span class='badge-1080p'>1080p</span>
 </div>
-<h3>Sticks: Cracks del golf <span class="btn-categoria serie">Serie</span></h3>
 <ul>
+<li><b>Año:</b> 2025</li>
 <li><b>Sinopsis:</b> Pryce Cahill estaba destinado al olimpo del golf, pero una crisis en pleno partido acabó con su carrera. Ahora sobrevive como puede y se entrega en cuerpo y alma para entrenar a Santi, un genio adolescente con un potencial inmenso... y quizá salvarse a sí mismo.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/tv/248830" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Comedia, Drama</li>
+<li><b>Rating TMDB:</b> 7.103</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/248830' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=248830" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=Sticks:+Cracks+del+golf+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=248830' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Sticks:+Cracks+del+golf+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/kVZcEY6PCeweU4GFWBOnlKAM28L.jpg" alt="Fanart">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/kVZcEY6PCeweU4GFWBOnlKAM28L.jpg' alt='Fanart'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>6.4</span></span>
-<span class="badge-year">2025</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-genre">Animación</span>
-</div>
-<h3>The Shiunji Family Children <span class="btn-categoria serie">Serie</span></h3>
+<h3>The Shiunji Family Children <span class='badge'>Serie</span>
+<span class='categoria-badge'>Anime</span>
+</h3>
 <ul>
+<li><b>Año:</b> 2025</li>
 <li><b>Sinopsis:</b> La familia Shiunji y sus siete hijos residen en una mansión del barrio tokiota de Setagaya. El hijo mayor, Arata, está cansado de que sus cinco hermanas le mangoneen y fantasea con la posibilidad de vivir lejos de ellas. Sin embargo, el padre de Arata les revela algo sorprendente: ¡Arata no tiene parentesco biológico con sus hermanas! Con este nuevo dato sobre la mesa, las relaciones entre los hermanos cambiarán completamente.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/tv/261091" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Animación, Comedia</li>
+<li><b>Rating TMDB:</b> 6.385</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/261091' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=261091" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=The+Shiunji+Family+Children+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=261091' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=The+Shiunji+Family+Children+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/7EDiFma8CrnbT9F05xNd50CZZrr.jpg" alt="Fanart">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/7EDiFma8CrnbT9F05xNd50CZZrr.jpg' alt='Fanart'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>6.5</span></span>
-<span class="badge-year">2025</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-quality">1080p</span>
-<span class="badge-genre">Animación</span>
+<h3>GUILTY GEAR STRIVE: DUAL RULERS <span class='badge'>Serie</span>
+<span class='categoria-badge'>Anime</span>
+</h3>
+<div class='badges-calidad'>
+<span class='badge-1080p'>1080p</span>
 </div>
-<h3>GUILTY GEAR STRIVE: DUAL RULERS <span class="btn-categoria serie">Serie</span></h3>
 <ul>
+<li><b>Año:</b> 2025</li>
 <li><b>Sinopsis:</b> Sin Kiske, el hijo prohibido de un humano y de un arma biológica mágica conocida como Gear, vive en un mundo en el que la magia ha sustituido a la ciencia y en el que aún quedan cicatrices de la rebelión Gear. Al asistir a la boda de sus padres, que rompe con todos los tabúes, conoce a una misteriosa chica que odia profundamente a los Gear. Su fatídico encuentro amenaza con poner patas arriba el mundo una vez más.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/tv/282666" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Animación, Sci-Fi & Fantasy, Action & Adventure</li>
+<li><b>Rating TMDB:</b> 6.5</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/282666' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=282666" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=GUILTY+GEAR+STRIVE:+DUAL+RULERS+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=282666' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=GUILTY+GEAR+STRIVE:+DUAL+RULERS+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/lL0rMeVqiOyVwmft6oPKQKbDYr6.jpg" alt="Fanart">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/lL0rMeVqiOyVwmft6oPKQKbDYr6.jpg' alt='Fanart'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>8.4</span></span>
-<span class="badge-year">2012</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-quality">1080p</span>
-<span class="badge-genre">Animación</span>
+<h3>Another <span class='badge'>Serie</span>
+<span class='categoria-badge'>Anime</span>
+</h3>
+<div class='badges-calidad'>
+<span class='badge-1080p'>1080p</span>
 </div>
-<h3>Another <span class="btn-categoria serie">Serie</span></h3>
 <ul>
+<li><b>Año:</b> 2012</li>
 <li><b>Sinopsis:</b> La historia sigue a Koichi Sakakibara, quien se transfiere a una clase maldita donde todos actúan como si una alumna fallecida, Misaki, aún estuviera viva. Al investigar, descubre oscuros secretos sobre la clase y su trágico destino.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/tv/42589" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Animación, Drama, Misterio</li>
+<li><b>Rating TMDB:</b> 8.358</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/42589' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=42589" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=Another+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=42589' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Another+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/pJqAgDico7ZTMAfAXyzldYqj5ME.jpg" alt="Fanart">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/pJqAgDico7ZTMAfAXyzldYqj5ME.jpg' alt='Fanart'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>7.7</span></span>
-<span class="badge-year">2018</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-genre">Animación</span>
-</div>
-<h3>Grand Blue <span class="btn-categoria serie">Serie</span></h3>
+<h3>Grand Blue <span class='badge'>Serie</span>
+<span class='categoria-badge'>Anime</span>
+</h3>
 <ul>
+<li><b>Año:</b> 2018</li>
 <li><b>Sinopsis:</b> Cuando Iori Kitahara empieza la universidad, decide vivir en la tienda de buceo de su tío en Izu llamada Grand Blue. Iori está deseando estudiar, disfrutar de las olas, el sol y de la compañía de su primo que vive con él. Pero las cosas no salen exactamente como esperaba. Se encuentra con un grupo de estudiantes, que de inmediato lo obligan a participar en sus actividades alcohólicas. Aunque no estaba dispuesto al principio, Iori rápidamente se rinde y se convierte en el alma de la fiesta. Desafortunadamente, con eso gana el desprecio de su prima, Chisa Kotegawa. Sin embargo, Iori todavía promete cumplir su vida universitaria ideal, pero ¿las cosas irán de acuerdo con lo planeado esta vez?</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/tv/79166" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Animación, Comedia</li>
+<li><b>Rating TMDB:</b> 7.694</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/79166' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=79166" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=Grand+Blue+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=79166' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Grand+Blue+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/de6iC707SwuMsE3y2fo5OHCOsvj.jpg" alt="Fanart">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/de6iC707SwuMsE3y2fo5OHCOsvj.jpg' alt='Fanart'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>8.5</span></span>
-<span class="badge-year">2019</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-quality">1080p</span>
-<span class="badge-genre">Animación</span>
+<h3>The Rising of the Shield Hero <span class='badge'>Serie</span>
+<span class='categoria-badge'>Anime</span>
+</h3>
+<div class='badges-calidad'>
+<span class='badge-1080p'>1080p</span>
 </div>
-<h3>The Rising of the Shield Hero <span class="btn-categoria serie">Serie</span></h3>
 <ul>
+<li><b>Año:</b> 2019</li>
 <li><b>Sinopsis:</b> Naofumi Iwatani es convocado a un mundo alterno como uno de sus héroes, pero al recibir un escudo en lugar de un arma ofensiva, es menospreciado y traicionado. Tras ser acusado falsamente y rechazado por todos, se ve obligado a valerse por sí mismo, emprendiendo un camino de lucha y venganza.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/tv/83095" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Animación, Action & Adventure, Sci-Fi & Fantasy, Drama</li>
+<li><b>Rating TMDB:</b> 8.521</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/83095' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=83095" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=The+Rising+of+the+Shield+Hero+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=83095' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=The+Rising+of+the+Shield+Hero+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/zDXuwmqkTi2lGM4AyloAAX4v51P.jpg" alt="Fanart">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/zDXuwmqkTi2lGM4AyloAAX4v51P.jpg' alt='Fanart'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>8.4</span></span>
-<span class="badge-year">2019</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-quality">1080p</span>
-<span class="badge-genre">Animación</span>
+<h3>Fire Force <span class='badge'>Serie</span>
+<span class='categoria-badge'>Anime</span>
+</h3>
+<div class='badges-calidad'>
+<span class='badge-1080p'>1080p</span>
 </div>
-<h3>Fire Force <span class="btn-categoria serie">Serie</span></h3>
 <ul>
+<li><b>Año:</b> 2019</li>
 <li><b>Sinopsis:</b> Tokio se encuentra bajo un extraño fenómeno: ¡la gente entra, sin explicación alguna, en combustión espontánea! Aunque, afortunadamente, hay un equipo a cargo de mantener a raya este particular fenómeno… ¡El Cuerpo Especial de Bomberos! Quienes, además, ahora cuenta con un nuevo miembro: Shinra, un adolescente de sonrisa perturbadora, poder curioso y cuyo objetivo es convertirse en un héroe.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/tv/88046" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Animación, Action & Adventure, Sci-Fi & Fantasy, Comedia</li>
+<li><b>Rating TMDB:</b> 8.372</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/88046' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=88046" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=Fire+Force+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=88046' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Fire+Force+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/yxCKl8PUUDmy0CTbWqBxfhHYRG6.jpg" alt="Fanart">
-<img class="clearlogo-center" src="https://assets.fanart.tv/fanart/tv/272556/hdtvlogo/tenkai-knights-5c803dd77dd9c.png" alt="Clearlogo">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/yxCKl8PUUDmy0CTbWqBxfhHYRG6.jpg' alt='Fanart'>
+<img class='clearlogo' src='https://assets.fanart.tv/fanart/tv/272556/hdtvlogo/tenkai-knights-5c803dd77dd9c.png' alt='Logo'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>8.5</span></span>
-<span class="badge-year">2025</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-genre">Animación</span>
-</div>
-<h3>Dealing with Mikadono Sisters Is a Breeze <span class="btn-categoria serie">Serie</span></h3>
+<h3>Dealing with Mikadono Sisters Is a Breeze <span class='badge'>Serie</span>
+<span class='categoria-badge'>Anime</span>
+</h3>
 <ul>
+<li><b>Año:</b> 2025</li>
 <li><b>Sinopsis:</b> Yu Ayase, hijo de una legendaria actriz ya fallecida, es tremendamente mediocre. Cuando recibe una invitación para mudarse a casa de una amiga de su madre, Yu se sorprende al descubrir que vivirá con tres hermanas superdotadas que son tan guapas como inteligentes... y que gobiernan su nuevo instituto como las Tres Emperadoras. ¿Conseguirá Yu derretir los fríos corazones de las hermanas y cumplir el último deseo de su madre, que forme una familia feliz?</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/tv/272556" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Animación, Comedia</li>
+<li><b>Rating TMDB:</b> 8.5</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/272556' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=272556" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=Dealing+with+Mikadono+Sisters+Is+a+Breeze+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=272556' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Dealing+with+Mikadono+Sisters+Is+a+Breeze+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/lPpKeKWD0dfHB8ZakfEavurVZ1T.jpg" alt="Fanart">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/lPpKeKWD0dfHB8ZakfEavurVZ1T.jpg' alt='Fanart'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>8.5</span></span>
-<span class="badge-year">2025</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-genre">Animación</span>
-</div>
-<h3>Solo Camping for Two <span class="btn-categoria serie">Serie</span></h3>
+<h3>Solo Camping for Two <span class='badge'>Serie</span>
+<span class='categoria-badge'>Anime</span>
+</h3>
 <ul>
+<li><b>Año:</b> 2025</li>
 <li><b>Sinopsis:</b> Gen Kinokura solo quería disfrutar de sus tranquilas acampadas en solitario, sin distracciones ni problemas... o así era hasta que aparece Shizuku Kusano, una novata despistada pero muy optimista que se cuela en su campamento (literalmente). El ahora algo mosqueado amante del aire libre tendrá el marrón de enseñarle a la jovencita cómo funciona todo.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/tv/281044" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Animación, Comedia</li>
+<li><b>Rating TMDB:</b> 8.5</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/281044' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=281044" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=Solo+Camping+for+Two+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=281044' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Solo+Camping+for+Two+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/mbQi8FC2Gk762plIcZfYCE2Kcmj.jpg" alt="Fanart">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/mbQi8FC2Gk762plIcZfYCE2Kcmj.jpg' alt='Fanart'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>7.6</span></span>
-<span class="badge-year">2011</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-quality">1080p</span>
-<span class="badge-genre">Drama</span>
+<h3>Los Borgia <span class='badge'>Serie</span>
+<span class='categoria-badge'>General</span>
+</h3>
+<div class='badges-calidad'>
+<span class='badge-1080p'>1080p</span>
 </div>
-<h3>Los Borgia <span class="btn-categoria serie">Serie</span></h3>
 <ul>
+<li><b>Año:</b> 2011</li>
 <li><b>Sinopsis:</b> La serie narra principalmente la historia de la familia Borgia, familia noble, con origen en el pueblo aragonés de Borja y establecida en Játiva, reino de Valencia, y posteriormente en Gandía, muy influyente durante el Renacimiento.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/tv/33025" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Drama, Crimen</li>
+<li><b>Rating TMDB:</b> 7.556</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/33025' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=33025" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=Los+Borgia+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=33025' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Los+Borgia+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/hFFAYkK8XkvIlQss9GYxo8TOhFi.jpg" alt="Fanart">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/hFFAYkK8XkvIlQss9GYxo8TOhFi.jpg' alt='Fanart'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>8.3</span></span>
-<span class="badge-year">2018</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-quality">1080p</span>
-<span class="badge-genre">Western</span>
+<h3>Yellowstone <span class='badge'>Serie</span>
+<span class='categoria-badge'>General</span>
+</h3>
+<div class='badges-calidad'>
+<span class='badge-1080p'>1080p</span>
+<span class='badge-4k'>4K</span>
 </div>
-<h3>Yellowstone <span class="btn-categoria serie">Serie</span></h3>
 <ul>
+<li><b>Año:</b> 2018</li>
 <li><b>Sinopsis:</b> John Dutton (Costner) es el propietario del rancho más grande de Estados Unidos. Él y sus hijos entablarán una lucha sin cuartel contra una reserva india y contra el Gobierno federal de Estados Unidos que intenta expandir el parque nacional contiguo a la propiedad de los Dutton.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/tv/73586" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Western, Drama</li>
+<li><b>Rating TMDB:</b> 8.256</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/73586' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=73586" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=Yellowstone+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=73586' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Yellowstone+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/z8CzVVAGHRRmgJQ6ZRjr8OuCmlj.jpg" alt="Fanart">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/z8CzVVAGHRRmgJQ6ZRjr8OuCmlj.jpg' alt='Fanart'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>7.4</span></span>
-<span class="badge-year">2021</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-quality">1080p</span>
-<span class="badge-genre">Crimen</span>
+<h3>The Equalizer <span class='badge'>Serie</span>
+<span class='categoria-badge'>General</span>
+</h3>
+<div class='badges-calidad'>
+<span class='badge-1080p'>1080p</span>
 </div>
-<h3>The Equalizer <span class="btn-categoria serie">Serie</span></h3>
 <ul>
+<li><b>Año:</b> 2021</li>
 <li><b>Sinopsis:</b> Robyn McCall, una enigmática ex operativa de la CIA con antecedentes misteriosos, usa sus extensas habilidades para ayudar a quienes no tienen a dónde acudir.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/tv/95205" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Crimen, Drama</li>
+<li><b>Rating TMDB:</b> 7.361</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/95205' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=95205" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=The+Equalizer+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=95205' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=The+Equalizer+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/c17wJXhZqMD2sGLJE5kTTD6XTj3.jpg" alt="Fanart">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/c17wJXhZqMD2sGLJE5kTTD6XTj3.jpg' alt='Fanart'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>0.0</span></span>
-<span class="badge-year">1989</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-quality">1080p</span>
-<span class="badge-genre">Drama</span>
+<h3>El Lute: La Serie <span class='badge'>Serie</span>
+<span class='categoria-badge'>General</span>
+</h3>
+<div class='badges-calidad'>
+<span class='badge-1080p'>1080p</span>
 </div>
-<h3>El Lute: La Serie <span class="btn-categoria serie">Serie</span></h3>
 <ul>
+<li><b>Año:</b> 1989</li>
 <li><b>Sinopsis:</b> En 1960 una familia trashumante recorre Extremadura. El hijo, Eleuterio Sánchez, «El Lute», roba unas gallinas y es condenado a 6 meses de cárcel. Años después, tras el asalto a una joyería de Madrid en el que muere el vigilante, es condenado a la pena de muerte. Sin embargo, «El Lute» se fuga durante un traslado. Desde ese momento, comienza su huida, acosado por la Guardia Civil.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/tv/217617" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Drama, Crimen</li>
+<li><b>Rating TMDB:</b> 0.0</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/217617' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=217617" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=El+Lute:+La+Serie+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=217617' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=El+Lute:+La+Serie+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 <div class='novedad'>
 <div class="fanart-box">
-<img class="fanart" src="https://image.tmdb.org/t/p/w780/8NX2kBLHS6vSrl8Lg3Y2JAqzmy9.jpg" alt="Fanart">
+<img class='fanart' src='https://image.tmdb.org/t/p/w780/8NX2kBLHS6vSrl8Lg3Y2JAqzmy9.jpg' alt='Fanart'>
 </div>
-<div class="badges-main">
-<span class="rating-star"><svg viewBox="0 0 22 22" aria-label="rating star"><path fill="#d7263d" d="M11 1.8l2.65 6.45H20a1 1 0 0 1 .59 1.81l-5.32 4.34 2.71 6.38a1 1 0 0 1-1.51 1.13L11 17.25l-5.47 4.46a1 1 0 0 1-1.51-1.13l2.71-6.38-5.32-4.34A1 1 0 0 1 2 8.25h6.35z"/></svg><span>7.3</span></span>
-<span class="badge-year">2025</span>
-<span class="badge-mpaa">ES-16</span>
-<span class="badge-quality">1080p</span>
-<span class="badge-genre">Drama</span>
+<h3>Vicios ocultos <span class='badge'>Serie</span>
+<span class='categoria-badge'>General</span>
+</h3>
+<div class='badges-calidad'>
+<span class='badge-1080p'>1080p</span>
+<span class='badge-dv'>DV</span>
+<span class='badge-hdr10'>HDR10+</span>
 </div>
-<h3>Vicios ocultos <span class="btn-categoria serie">Serie</span></h3>
 <ul>
+<li><b>Año:</b> 2025</li>
 <li><b>Sinopsis:</b> Cuando un titán financiero se encuentra de repente divorciado y en paro, empieza a robar a sus vecinos ricos para mantenerse a flote. Curiosamente, robar a su círculo social le entusiasma, pero poco a poco, va enredándose en una red mortal.</li>
-<li><b>Más info:</b> <a href="https://www.themoviedb.org/tv/241609" target="_blank" style="color:#7acead;">TMDB</a></li>
+<li><b>Género:</b> Drama</li>
+<li><b>Rating TMDB:</b> 7.3</li>
+<li><b>Info:</b> <a href='https://www.themoviedb.org/tv/241609' target='_blank' style='color:#76dfa8;'>TMDB</a></li>
 </ul>
-
-<a class="emby-btn" href="emby://detail?itemId=241609" target="_blank" rel="noopener">
-<svg class="emby-logo" viewBox="0 0 256 256" aria-hidden="true"><circle cx="128" cy="128" r="128" fill="#232E3E"/>
-<polygon points="42,214 214,214 214,42 42,42 42,214" fill="#62BE7C" />
-<polygon points="88,88 168,128 88,168 88,88" fill="white"/></svg>
-Ver en App Emby
-</a>
-
-<a class="trailer-btn" href="https://www.youtube.com/results?search_query=Vicios+ocultos+trailer+español" target="_blank" rel="noopener">
-<svg class="yt-logo" viewBox="0 0 100 100"><rect rx="24" width="100" height="100" fill="#fff" opacity="0.08"/>
-<path d="M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z" fill="#fff"/>
-<polygon points="40,35 70,50 40,65" fill="#FF1616"/></svg>
-Ver tráiler
-</a>
+<a class='emby-btn' href='emby://detail?itemId=241609' target='_blank'>
+                <svg class='emby-logo' viewBox='0 0 256 256'><circle cx='128' cy='128' r='128' fill='#232E3E'/>
+                <polygon points='42,214 214,214 214,42 42,42 42,214' fill='#62BE7C' />
+                <polygon points='88,88 168,128 88,168 88,88' fill='white'/></svg>
+                Ver en App Emby
+                </a>
+<a class='trailer-btn' href='https://www.youtube.com/results?search_query=Vicios+ocultos+trailer+español' target='_blank'>
+                <svg class='yt-logo' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='#fff' opacity='0.08'/>
+                <path d='M94.7 32.1a11.3 11.3 0 0 0-8-8C81 22 50 22 50 22s-31 .1-36.7 2.1a11.3 11.3 0 0 0-8 8C2.1 37.9 2 50 2 50s.1 12.1 3.3 17.9a11.3 11.3 0 0 0 8 8C19 78 50 78 50 78s31-.1 36.7-2.1a11.3 11.3 0 0 0 8-8C97.9 62.1 98 50 98 50s-.1-12.1-3.3-17.9z' fill='#fff'/>
+                <polygon points='40,35 70,50 40,65' fill='#FF1616'/></svg>
+                Ver tráiler
+                </a>
+<div class='nota-app'><i>Abre la app Emby. Busca el título manualmente.</i></div>
 </div>
 </body></html>
